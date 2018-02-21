@@ -8,12 +8,36 @@
 
 import UIKit
 
-class Company_InfoVC: UIViewController {
-
+class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderDelegate {
+   
+     @IBOutlet weak var contentsView: UIView!
+    @IBOutlet weak var mapArea: UIView!
+   
+    var mapView : MTMapView?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.mapView = MTMapView(frame: self.mapArea.frame)
+        self.mapView?.delegate = self
+        self.mapView?.baseMapType = .standard
+        
+        self.contentsView.addSubview(self.mapView!)
+        
+        
+    }
+    
+    func createPoiItemToCompanyPosition(position : MTMapPointGeo) -> [MTMapPOIItem] {
+        var poiItems = [MTMapPOIItem]()
+        
+        let poiItem = MTMapPOIItem()
+        
+//        poiItem.markerType = .
+        
+        return poiItems
     }
 
     override func didReceiveMemoryWarning() {

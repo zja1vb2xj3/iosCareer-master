@@ -702,7 +702,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seu-3s-WlE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모집부분" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig9-Bj-0x8">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모집부분" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig9-Bj-0x8" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="128" width="96" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -712,16 +712,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직무내용" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nj-8D-VPv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직무내용" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nj-8D-VPv" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="167" width="96" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -730,23 +722,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O2-IY-acb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O2-IY-acb" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="167" width="208" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경력사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90X-xF-rjc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경력사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90X-xF-rjc" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="206" width="96" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -755,23 +739,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br1-11-mrN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br1-11-mrN" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="206" width="208" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모집인원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMd-c4-dbk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모집인원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMd-c4-dbk" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="245" width="96" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -780,23 +756,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IW-J9-cSY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IW-J9-cSY" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="245" width="208" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자격요건" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02i-tC-r79">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자격요건" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02i-tC-r79" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="284" width="96" height="51"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -805,23 +773,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관련전공자우대, 동종경력자우대,\n인근거주자우대" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MA-8x-KMD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관련전공자우대, 동종경력자우대,\n인근거주자우대" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MA-8x-KMD" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="284" width="208" height="51"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제출서류" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE5-6F-ddr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제출서류" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE5-6F-ddr" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="503" width="96" height="51"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -831,14 +791,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관련전공자우대, 동종경력자우대,\n인근거주자우대" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHz-qJ-f2m">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관련전공자우대, 동종경력자우대,\n인근거주자우대" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHz-qJ-f2m" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="503" width="208" height="51"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="급여" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0w-RA-Kqs">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="급여" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0w-RA-Kqs" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="374" width="96" height="51"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -847,23 +807,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신입 : 연 2,700만원(대졸초임)\n경력 : 면접 후 결정" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ao-HR-x7A">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신입 : 연 2,700만원(대졸초임)\n경력 : 면접 후 결정" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ao-HR-x7A" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="374" width="208" height="51"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무지" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUQ-3x-jPL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무지" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUQ-3x-jPL" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="425" width="96" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -872,23 +824,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJS-Ro-f2X">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJS-Ro-f2X" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="425" width="208" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무형태" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxw-gh-4w4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무형태" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxw-gh-4w4" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="335" width="96" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -897,23 +841,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPq-zk-amO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPq-zk-amO" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="335" width="208" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전형방법" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPy-2N-OFe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전형방법" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPy-2N-OFe" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="464" width="96" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -923,22 +859,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LG-Rq-Egn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LG-Rq-Egn" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="464" width="208" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복리후생" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f88-02-1Xa">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복리후생" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f88-02-1Xa" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="554" width="96" height="72"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관련전공자우대, 동종경력자우대,\n인근거주자우대" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PP1-To-UsE">
-                                                <rect key="frame" x="104" y="554" width="208" height="71"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관련전공자우대, 동종경력자우대,\n인근거주자우대" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PP1-To-UsE" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
+                                                <rect key="frame" x="104" y="554" width="208" height="72"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
@@ -974,7 +910,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-Fx-iQ1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇㅇ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-Fx-iQ1" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="104" y="128" width="208" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -988,6 +924,7 @@
                                             <constraint firstItem="ig9-Bj-0x8" firstAttribute="baseline" secondItem="n3H-Fx-iQ1" secondAttribute="baseline" id="0F3-Rg-5Cp"/>
                                             <constraint firstItem="n3H-Fx-iQ1" firstAttribute="trailing" secondItem="OKw-l6-LyA" secondAttribute="trailing" id="0KU-93-XKI"/>
                                             <constraint firstItem="C9b-C9-bOG" firstAttribute="top" secondItem="seu-3s-WlE" secondAttribute="top" constant="8" id="1hP-21-pzL"/>
+                                            <constraint firstItem="PP1-To-UsE" firstAttribute="trailing" secondItem="yHz-qJ-f2m" secondAttribute="trailing" id="2By-Mu-IOd"/>
                                             <constraint firstItem="n3H-Fx-iQ1" firstAttribute="leading" secondItem="ig9-Bj-0x8" secondAttribute="trailing" id="39C-BE-gsf"/>
                                             <constraint firstAttribute="height" constant="640" id="3Bb-so-jb0"/>
                                             <constraint firstAttribute="trailing" secondItem="C9b-C9-bOG" secondAttribute="trailing" constant="8" id="3bg-Xi-opU"/>
@@ -999,6 +936,8 @@
                                             <constraint firstItem="n3H-Fx-iQ1" firstAttribute="leading" secondItem="6O2-IY-acb" secondAttribute="leading" id="7GO-YB-OmG"/>
                                             <constraint firstItem="1ao-HR-x7A" firstAttribute="trailing" secondItem="RJS-Ro-f2X" secondAttribute="trailing" id="7WQ-ID-c2T"/>
                                             <constraint firstItem="AUQ-3x-jPL" firstAttribute="top" secondItem="E0w-RA-Kqs" secondAttribute="bottom" id="7wN-fC-IHO"/>
+                                            <constraint firstItem="f88-02-1Xa" firstAttribute="top" secondItem="FE5-6F-ddr" secondAttribute="bottom" id="82T-Ed-7D6"/>
+                                            <constraint firstItem="f88-02-1Xa" firstAttribute="trailing" secondItem="FE5-6F-ddr" secondAttribute="trailing" id="88V-Vl-gPz"/>
                                             <constraint firstItem="E0w-RA-Kqs" firstAttribute="top" secondItem="1ao-HR-x7A" secondAttribute="top" id="9AL-LW-muw"/>
                                             <constraint firstItem="eMd-c4-dbk" firstAttribute="baseline" secondItem="4IW-J9-cSY" secondAttribute="baseline" id="CML-sj-lwX"/>
                                             <constraint firstItem="6Nj-8D-VPv" firstAttribute="trailing" secondItem="90X-xF-rjc" secondAttribute="trailing" id="D9P-L4-Om3"/>
@@ -1009,17 +948,15 @@
                                             <constraint firstItem="E0w-RA-Kqs" firstAttribute="trailing" secondItem="AUQ-3x-jPL" secondAttribute="trailing" id="I7V-jd-trA"/>
                                             <constraint firstItem="6O2-IY-acb" firstAttribute="leading" secondItem="Br1-11-mrN" secondAttribute="leading" id="IAt-Of-T3o"/>
                                             <constraint firstItem="6Nj-8D-VPv" firstAttribute="baseline" secondItem="6O2-IY-acb" secondAttribute="baseline" id="INL-JC-cte"/>
-                                            <constraint firstItem="yHz-qJ-f2m" firstAttribute="trailing" secondItem="PP1-To-UsE" secondAttribute="trailing" id="JKN-M6-3xq"/>
                                             <constraint firstItem="E0w-RA-Kqs" firstAttribute="leading" secondItem="AUQ-3x-jPL" secondAttribute="leading" id="KfU-Qw-E3a"/>
                                             <constraint firstItem="6Nj-8D-VPv" firstAttribute="leading" secondItem="90X-xF-rjc" secondAttribute="leading" id="NHD-L1-FxU"/>
                                             <constraint firstItem="90X-xF-rjc" firstAttribute="firstBaseline" secondItem="Br1-11-mrN" secondAttribute="firstBaseline" id="NKv-4u-jmO"/>
                                             <constraint firstItem="BPq-zk-amO" firstAttribute="leading" secondItem="1ao-HR-x7A" secondAttribute="leading" id="O8z-ny-oXV"/>
                                             <constraint firstItem="QPy-2N-OFe" firstAttribute="baseline" secondItem="5LG-Rq-Egn" secondAttribute="baseline" id="OHe-K4-XCQ"/>
+                                            <constraint firstItem="f88-02-1Xa" firstAttribute="top" secondItem="PP1-To-UsE" secondAttribute="top" id="Os2-k3-UKr"/>
                                             <constraint firstItem="02i-tC-r79" firstAttribute="top" secondItem="eMd-c4-dbk" secondAttribute="bottom" id="PUF-L2-Ueg"/>
-                                            <constraint firstItem="FE5-6F-ddr" firstAttribute="trailing" secondItem="f88-02-1Xa" secondAttribute="trailing" id="Pcc-5r-Dca"/>
                                             <constraint firstItem="Br1-11-mrN" firstAttribute="leading" secondItem="4IW-J9-cSY" secondAttribute="leading" id="Rq9-9O-Zm6"/>
                                             <constraint firstItem="eMd-c4-dbk" firstAttribute="leading" secondItem="02i-tC-r79" secondAttribute="leading" id="STf-ET-6RW"/>
-                                            <constraint firstAttribute="bottom" secondItem="f88-02-1Xa" secondAttribute="bottom" constant="14" id="Tb3-cW-kOU"/>
                                             <constraint firstItem="RJS-Ro-f2X" firstAttribute="leading" secondItem="5LG-Rq-Egn" secondAttribute="leading" id="Tk8-zC-tTo"/>
                                             <constraint firstAttribute="trailing" secondItem="OKw-l6-LyA" secondAttribute="trailing" constant="8" id="Tli-XR-khN"/>
                                             <constraint firstItem="2MA-8x-KMD" firstAttribute="trailing" secondItem="BPq-zk-amO" secondAttribute="trailing" id="U73-xl-b1e"/>
@@ -1028,6 +965,7 @@
                                             <constraint firstItem="90X-xF-rjc" firstAttribute="leading" secondItem="eMd-c4-dbk" secondAttribute="leading" id="Uij-ES-6qG"/>
                                             <constraint firstItem="ig9-Bj-0x8" firstAttribute="leading" secondItem="6Nj-8D-VPv" secondAttribute="leading" id="VkC-36-Zxy"/>
                                             <constraint firstItem="cxw-gh-4w4" firstAttribute="leading" secondItem="E0w-RA-Kqs" secondAttribute="leading" id="YEX-kv-Qlg"/>
+                                            <constraint firstItem="f88-02-1Xa" firstAttribute="bottom" secondItem="PP1-To-UsE" secondAttribute="bottom" id="Z9E-7q-UmY"/>
                                             <constraint firstItem="5LG-Rq-Egn" firstAttribute="trailing" secondItem="yHz-qJ-f2m" secondAttribute="trailing" id="ZsZ-65-rtf"/>
                                             <constraint firstItem="eMd-c4-dbk" firstAttribute="trailing" secondItem="02i-tC-r79" secondAttribute="trailing" id="a7G-0x-q59"/>
                                             <constraint firstItem="4IW-J9-cSY" firstAttribute="leading" secondItem="2MA-8x-KMD" secondAttribute="leading" id="aBH-zi-5ZX"/>
@@ -1040,14 +978,12 @@
                                             <constraint firstItem="cxw-gh-4w4" firstAttribute="baseline" secondItem="BPq-zk-amO" secondAttribute="baseline" id="fpN-x4-oxh"/>
                                             <constraint firstItem="AUQ-3x-jPL" firstAttribute="trailing" secondItem="QPy-2N-OFe" secondAttribute="trailing" id="fzL-vE-4ri"/>
                                             <constraint firstItem="AUQ-3x-jPL" firstAttribute="firstBaseline" secondItem="RJS-Ro-f2X" secondAttribute="firstBaseline" id="g0g-tw-kYX"/>
-                                            <constraint firstItem="f88-02-1Xa" firstAttribute="baseline" secondItem="PP1-To-UsE" secondAttribute="baseline" id="gHp-wi-4qC"/>
-                                            <constraint firstItem="yHz-qJ-f2m" firstAttribute="leading" secondItem="PP1-To-UsE" secondAttribute="leading" id="i4W-HT-wGR"/>
                                             <constraint firstItem="cxw-gh-4w4" firstAttribute="firstBaseline" secondItem="BPq-zk-amO" secondAttribute="firstBaseline" id="iNl-ed-sVa"/>
-                                            <constraint firstItem="f88-02-1Xa" firstAttribute="top" secondItem="FE5-6F-ddr" secondAttribute="bottom" id="jtS-wQ-kDx"/>
+                                            <constraint firstItem="f88-02-1Xa" firstAttribute="leading" secondItem="FE5-6F-ddr" secondAttribute="leading" id="iVk-eZ-h2e"/>
                                             <constraint firstItem="cxw-gh-4w4" firstAttribute="trailing" secondItem="E0w-RA-Kqs" secondAttribute="trailing" id="kAk-Uu-6bh"/>
+                                            <constraint firstItem="PP1-To-UsE" firstAttribute="leading" secondItem="yHz-qJ-f2m" secondAttribute="leading" id="l1o-4K-2GV"/>
                                             <constraint firstItem="90X-xF-rjc" firstAttribute="trailing" secondItem="eMd-c4-dbk" secondAttribute="trailing" id="lal-WJ-Reh"/>
                                             <constraint firstItem="02i-tC-r79" firstAttribute="trailing" secondItem="cxw-gh-4w4" secondAttribute="trailing" id="lka-5H-WZM"/>
-                                            <constraint firstItem="f88-02-1Xa" firstAttribute="top" secondItem="PP1-To-UsE" secondAttribute="top" id="lsE-H5-mNy"/>
                                             <constraint firstItem="FE5-6F-ddr" firstAttribute="top" secondItem="yHz-qJ-f2m" secondAttribute="top" id="lv2-zS-d3O"/>
                                             <constraint firstItem="90X-xF-rjc" firstAttribute="baseline" secondItem="Br1-11-mrN" secondAttribute="baseline" id="mxc-hZ-LfV"/>
                                             <constraint firstItem="E0w-RA-Kqs" firstAttribute="top" secondItem="cxw-gh-4w4" secondAttribute="bottom" id="p6O-Xm-z9p"/>
@@ -1063,12 +999,12 @@
                                             <constraint firstItem="6Nj-8D-VPv" firstAttribute="firstBaseline" secondItem="6O2-IY-acb" secondAttribute="firstBaseline" id="uak-1w-pcr"/>
                                             <constraint firstItem="ig9-Bj-0x8" firstAttribute="leading" secondItem="OKw-l6-LyA" secondAttribute="leading" id="uc1-fA-0rj"/>
                                             <constraint firstItem="ig9-Bj-0x8" firstAttribute="top" secondItem="OKw-l6-LyA" secondAttribute="bottom" constant="6" id="uzn-Og-iJj"/>
-                                            <constraint firstItem="FE5-6F-ddr" firstAttribute="leading" secondItem="f88-02-1Xa" secondAttribute="leading" id="wav-pq-Gqm"/>
                                             <constraint firstItem="cxw-gh-4w4" firstAttribute="top" secondItem="02i-tC-r79" secondAttribute="bottom" id="y4s-aO-nhH"/>
                                             <constraint firstItem="OKw-l6-LyA" firstAttribute="top" secondItem="C9b-C9-bOG" secondAttribute="bottom" constant="24" id="y59-QZ-TQR"/>
                                             <constraint firstItem="ig9-Bj-0x8" firstAttribute="trailing" secondItem="6Nj-8D-VPv" secondAttribute="trailing" id="yL6-Ko-ZvC"/>
                                             <constraint firstItem="6O2-IY-acb" firstAttribute="trailing" secondItem="Br1-11-mrN" secondAttribute="trailing" id="yYa-vG-CfU"/>
                                             <constraint firstItem="ig9-Bj-0x8" firstAttribute="firstBaseline" secondItem="n3H-Fx-iQ1" secondAttribute="firstBaseline" id="yiI-JS-pKB"/>
+                                            <constraint firstAttribute="bottom" secondItem="f88-02-1Xa" secondAttribute="bottom" constant="14" id="zio-iL-FzM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1091,10 +1027,6 @@
                         <viewLayoutGuide key="safeArea" id="YZd-Te-WlW"/>
                     </view>
                     <size key="freeformSize" width="320" height="660"/>
-                    <connections>
-                        <outlet property="contentLabel1" destination="n3H-Fx-iQ1" id="RHT-HO-S23"/>
-                        <outlet property="titleLabel1" destination="ig9-Bj-0x8" id="2qr-WJ-PN0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LW7-bZ-RqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1121,7 +1053,7 @@
                                                     <constraint firstAttribute="height" constant="124" id="M0n-JL-OIk"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-W3-Xjl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-W3-Xjl" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="132" width="93" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -1132,14 +1064,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPx-jA-76a">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPx-jA-76a" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="132" width="211" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참여지역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nin-89-ka1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참여지역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nin-89-ka1" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="171" width="93" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -1149,7 +1081,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBT-Vi-W3a">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBT-Vi-W3a" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="171" width="211" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1160,7 +1092,7 @@
                                                 <rect key="frame" x="8" y="210" width="304" height="217"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본사/연구소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1P-fT-JXS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본사/연구소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1P-fT-JXS" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="427" width="93" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -1170,14 +1102,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-vM-Sky">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-vM-Sky" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="427" width="211" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국내공장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxv-bQ-2f6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국내공장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxv-bQ-2f6" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="466" width="93" height="39"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -1187,14 +1119,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFq-X8-TxB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFq-X8-TxB" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="466" width="211" height="39"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주요생산품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s45-8B-sDL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주요생산품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s45-8B-sDL" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="505" width="93" height="51"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -1204,14 +1136,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYp-cP-Uda">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYp-cP-Uda" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="505" width="211" height="51"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회사소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-2i-K5M">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회사소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-2i-K5M" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="556" width="93" height="175"/>
                                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -1221,7 +1153,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txu-Qy-PfU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txu-Qy-PfU" customClass="PaddingLabel" customModule="Career" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="556" width="211" height="175"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1302,6 +1234,10 @@
                         <viewLayoutGuide key="safeArea" id="mT7-GV-yYR"/>
                     </view>
                     <size key="freeformSize" width="320" height="765"/>
+                    <connections>
+                        <outlet property="contentsView" destination="bdO-1T-FMx" id="xei-B5-MIC"/>
+                        <outlet property="mapArea" destination="Nia-M2-ZbI" id="g5j-mD-Ujb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKS-Fc-k80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,6 +16,14 @@
 		357B5831203A8E1900663628 /* InfoMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B5830203A8E1900663628 /* InfoMainVC.swift */; };
 		357B5833203A984C00663628 /* Recruitment_InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B5832203A984C00663628 /* Recruitment_InfoVC.swift */; };
 		357B5835203A988300663628 /* Company_InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B5834203A988300663628 /* Company_InfoVC.swift */; };
+		3590B0E4203D0B080047DFA8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0E3203D0B080047DFA8 /* libsqlite3.tbd */; };
+		3590B0E6203D0B120047DFA8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0E5203D0B120047DFA8 /* libxml2.tbd */; };
+		3590B0E8203D0B1F0047DFA8 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0E7203D0B1F0047DFA8 /* libstdc++.6.tbd */; };
+		3590B0EA203D0B270047DFA8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0E9203D0B270047DFA8 /* QuartzCore.framework */; };
+		3590B0EC203D0B2F0047DFA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0EB203D0B2F0047DFA8 /* CoreLocation.framework */; };
+		3590B0EE203D0B380047DFA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0ED203D0B380047DFA8 /* SystemConfiguration.framework */; };
+		3590B0F0203D0B410047DFA8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0EF203D0B410047DFA8 /* OpenGLES.framework */; };
+		3590B0F4203D0D110047DFA8 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0F3203D0D110047DFA8 /* DaumMap.framework */; };
 		35BDF13F203D097B005CB27B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BDF13E203D097B005CB27B /* PaddingLabel.swift */; };
 		C4A8087B20282A27007D5812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8087A20282A27007D5812 /* AppDelegate.swift */; };
 		C4A8087D20282A27007D5812 /* LoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8087C20282A27007D5812 /* LoadVC.swift */; };
@@ -36,6 +44,14 @@
 		357B5830203A8E1900663628 /* InfoMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoMainVC.swift; sourceTree = "<group>"; };
 		357B5832203A984C00663628 /* Recruitment_InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruitment_InfoVC.swift; sourceTree = "<group>"; };
 		357B5834203A988300663628 /* Company_InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company_InfoVC.swift; sourceTree = "<group>"; };
+		3590B0E3203D0B080047DFA8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3590B0E5203D0B120047DFA8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		3590B0E7203D0B1F0047DFA8 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		3590B0E9203D0B270047DFA8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3590B0EB203D0B2F0047DFA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3590B0ED203D0B380047DFA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3590B0EF203D0B410047DFA8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3590B0F3203D0D110047DFA8 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		35BDF13E203D097B005CB27B /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		35BDF140203D09DF005CB27B /* DaumMapBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaumMapBridgeHeader.h; sourceTree = "<group>"; };
 		C4A8087720282A27007D5812 /* Career.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Career.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +70,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3590B0F4203D0D110047DFA8 /* DaumMap.framework in Frameworks */,
+				3590B0F0203D0B410047DFA8 /* OpenGLES.framework in Frameworks */,
+				3590B0EE203D0B380047DFA8 /* SystemConfiguration.framework in Frameworks */,
+				3590B0EC203D0B2F0047DFA8 /* CoreLocation.framework in Frameworks */,
+				3590B0EA203D0B270047DFA8 /* QuartzCore.framework in Frameworks */,
+				3590B0E8203D0B1F0047DFA8 /* libstdc++.6.tbd in Frameworks */,
+				3590B0E6203D0B120047DFA8 /* libxml2.tbd in Frameworks */,
+				3590B0E4203D0B080047DFA8 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +116,28 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		3590B0E2203D0B080047DFA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3590B0EF203D0B410047DFA8 /* OpenGLES.framework */,
+				3590B0ED203D0B380047DFA8 /* SystemConfiguration.framework */,
+				3590B0EB203D0B2F0047DFA8 /* CoreLocation.framework */,
+				3590B0E9203D0B270047DFA8 /* QuartzCore.framework */,
+				3590B0E7203D0B1F0047DFA8 /* libstdc++.6.tbd */,
+				3590B0E5203D0B120047DFA8 /* libxml2.tbd */,
+				3590B0E3203D0B080047DFA8 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3590B0F2203D0CFC0047DFA8 /* DaumMapFramework */ = {
+			isa = PBXGroup;
+			children = (
+				3590B0F3203D0D110047DFA8 /* DaumMap.framework */,
+			);
+			path = DaumMapFramework;
+			sourceTree = "<group>";
+		};
 		35BDF13C203D0918005CB27B /* CustomMember */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +159,7 @@
 			children = (
 				C4A8087920282A27007D5812 /* Career */,
 				C4A8087820282A27007D5812 /* Products */,
+				3590B0E2203D0B080047DFA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +174,7 @@
 		C4A8087920282A27007D5812 /* Career */ = {
 			isa = PBXGroup;
 			children = (
+				3590B0F2203D0CFC0047DFA8 /* DaumMapFramework */,
 				35BDF13D203D0927005CB27B /* Obj_Bridge_Header */,
 				35BDF13C203D0918005CB27B /* CustomMember */,
 				357B582D203A808F00663628 /* TableViewCell */,
@@ -366,14 +414,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4RP78Z8DQG;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Career",
+					"$(PROJECT_DIR)/Career/DaumMapFramework",
 				);
 				INFOPLIST_FILE = Career/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beaconyx.Career;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/beaconyxcorp./Desktop/진행 프로젝트/iosCareer-master/Career/Obj_Bridge_Header/DaumMapBridgeHeader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -385,14 +436,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4RP78Z8DQG;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Career",
+					"$(PROJECT_DIR)/Career/DaumMapFramework",
 				);
 				INFOPLIST_FILE = Career/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beaconyx.Career;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/beaconyxcorp./Desktop/진행 프로젝트/iosCareer-master/Career/Obj_Bridge_Header/DaumMapBridgeHeader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
