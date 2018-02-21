@@ -24,6 +24,16 @@
 		3590B0EE203D0B380047DFA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0ED203D0B380047DFA8 /* SystemConfiguration.framework */; };
 		3590B0F0203D0B410047DFA8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0EF203D0B410047DFA8 /* OpenGLES.framework */; };
 		3590B0F4203D0D110047DFA8 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0F3203D0D110047DFA8 /* DaumMap.framework */; };
+		3590B0F9203D17010047DFA8 /* map_pin_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 3590B0F5203D16FF0047DFA8 /* map_pin_red.png */; };
+		3590B0FA203D17010047DFA8 /* magnifying_glass.png in Resources */ = {isa = PBXBuildFile; fileRef = 3590B0F6203D17000047DFA8 /* magnifying_glass.png */; };
+		3590B0FB203D17010047DFA8 /* btn_qr.png in Resources */ = {isa = PBXBuildFile; fileRef = 3590B0F7203D17000047DFA8 /* btn_qr.png */; };
+		3590B0FC203D17010047DFA8 /* map_pin_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 3590B0F8203D17010047DFA8 /* map_pin_blue.png */; };
+		3590B100203D28FE0047DFA8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0FE203D28FD0047DFA8 /* Bolts.framework */; };
+		3590B101203D28FE0047DFA8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B0FF203D28FE0047DFA8 /* Parse.framework */; };
+		3590B104203D2A900047DFA8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3590B103203D2A8F0047DFA8 /* AudioToolbox.framework */; };
+		3590B109203D2D010047DFA8 /* BeaconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B108203D2D010047DFA8 /* BeaconModel.swift */; };
+		3590B10C203D2FA70047DFA8 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B10B203D2FA70047DFA8 /* CompanyModel.swift */; };
+		3590B10F203D52440047DFA8 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B10E203D52440047DFA8 /* Key.swift */; };
 		35BDF13F203D097B005CB27B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BDF13E203D097B005CB27B /* PaddingLabel.swift */; };
 		C4A8087B20282A27007D5812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8087A20282A27007D5812 /* AppDelegate.swift */; };
 		C4A8087D20282A27007D5812 /* LoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8087C20282A27007D5812 /* LoadVC.swift */; };
@@ -52,6 +62,16 @@
 		3590B0ED203D0B380047DFA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3590B0EF203D0B410047DFA8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3590B0F3203D0D110047DFA8 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		3590B0F5203D16FF0047DFA8 /* map_pin_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_red.png; sourceTree = "<group>"; };
+		3590B0F6203D17000047DFA8 /* magnifying_glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifying_glass.png; sourceTree = "<group>"; };
+		3590B0F7203D17000047DFA8 /* btn_qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_qr.png; sourceTree = "<group>"; };
+		3590B0F8203D17010047DFA8 /* map_pin_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_blue.png; sourceTree = "<group>"; };
+		3590B0FE203D28FD0047DFA8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		3590B0FF203D28FE0047DFA8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		3590B103203D2A8F0047DFA8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3590B108203D2D010047DFA8 /* BeaconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconModel.swift; sourceTree = "<group>"; };
+		3590B10B203D2FA70047DFA8 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
+		3590B10E203D52440047DFA8 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		35BDF13E203D097B005CB27B /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		35BDF140203D09DF005CB27B /* DaumMapBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaumMapBridgeHeader.h; sourceTree = "<group>"; };
 		C4A8087720282A27007D5812 /* Career.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Career.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3590B104203D2A900047DFA8 /* AudioToolbox.framework in Frameworks */,
+				3590B100203D28FE0047DFA8 /* Bolts.framework in Frameworks */,
+				3590B101203D28FE0047DFA8 /* Parse.framework in Frameworks */,
 				3590B0F4203D0D110047DFA8 /* DaumMap.framework in Frameworks */,
 				3590B0F0203D0B410047DFA8 /* OpenGLES.framework in Frameworks */,
 				3590B0EE203D0B380047DFA8 /* SystemConfiguration.framework in Frameworks */,
@@ -90,6 +113,10 @@
 				356BDED420311DB300483C54 /* back_icon.png */,
 				356BDED820311F2800483C54 /* home_icon.png */,
 				3552AE8D2033F39800C168D1 /* back_icon_x2.png */,
+				3590B0F7203D17000047DFA8 /* btn_qr.png */,
+				3590B0F6203D17000047DFA8 /* magnifying_glass.png */,
+				3590B0F8203D17010047DFA8 /* map_pin_blue.png */,
+				3590B0F5203D16FF0047DFA8 /* map_pin_red.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -119,6 +146,7 @@
 		3590B0E2203D0B080047DFA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3590B103203D2A8F0047DFA8 /* AudioToolbox.framework */,
 				3590B0EF203D0B410047DFA8 /* OpenGLES.framework */,
 				3590B0ED203D0B380047DFA8 /* SystemConfiguration.framework */,
 				3590B0EB203D0B2F0047DFA8 /* CoreLocation.framework */,
@@ -136,6 +164,40 @@
 				3590B0F3203D0D110047DFA8 /* DaumMap.framework */,
 			);
 			path = DaumMapFramework;
+			sourceTree = "<group>";
+		};
+		3590B0FD203D28ED0047DFA8 /* ParseFramework */ = {
+			isa = PBXGroup;
+			children = (
+				3590B0FE203D28FD0047DFA8 /* Bolts.framework */,
+				3590B0FF203D28FE0047DFA8 /* Parse.framework */,
+			);
+			path = ParseFramework;
+			sourceTree = "<group>";
+		};
+		3590B102203D296A0047DFA8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8087A20282A27007D5812 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3590B105203D2B390047DFA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3590B108203D2D010047DFA8 /* BeaconModel.swift */,
+				3590B10B203D2FA70047DFA8 /* CompanyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3590B10D203D521E0047DFA8 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				3590B10E203D52440047DFA8 /* Key.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		35BDF13C203D0918005CB27B /* CustomMember */ = {
@@ -174,13 +236,16 @@
 		C4A8087920282A27007D5812 /* Career */ = {
 			isa = PBXGroup;
 			children = (
+				3590B10D203D521E0047DFA8 /* Constant */,
+				3590B105203D2B390047DFA8 /* Model */,
+				3590B102203D296A0047DFA8 /* AppDelegate */,
+				3590B0FD203D28ED0047DFA8 /* ParseFramework */,
 				3590B0F2203D0CFC0047DFA8 /* DaumMapFramework */,
 				35BDF13D203D0927005CB27B /* Obj_Bridge_Header */,
 				35BDF13C203D0918005CB27B /* CustomMember */,
 				357B582D203A808F00663628 /* TableViewCell */,
 				35732E4820311C5800AC13D4 /* ViewController */,
 				35732E4720311C4B00AC13D4 /* Resources */,
-				C4A8087A20282A27007D5812 /* AppDelegate.swift */,
 				C4A8087E20282A27007D5812 /* Main.storyboard */,
 				C4A8088420282A27007D5812 /* Assets.xcassets */,
 				C4A8088620282A27007D5812 /* LaunchScreen.storyboard */,
@@ -250,11 +315,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3552AE8E2033F39800C168D1 /* back_icon_x2.png in Resources */,
+				3590B0FA203D17010047DFA8 /* magnifying_glass.png in Resources */,
+				3590B0FC203D17010047DFA8 /* map_pin_blue.png in Resources */,
 				C4A8088820282A27007D5812 /* LaunchScreen.storyboard in Resources */,
 				C4A8088520282A27007D5812 /* Assets.xcassets in Resources */,
 				356BDED920311F2800483C54 /* home_icon.png in Resources */,
 				C4A8088020282A27007D5812 /* Main.storyboard in Resources */,
 				356BDED520311DB300483C54 /* back_icon.png in Resources */,
+				3590B0FB203D17010047DFA8 /* btn_qr.png in Resources */,
+				3590B0F9203D17010047DFA8 /* map_pin_red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,11 +340,14 @@
 				357B5831203A8E1900663628 /* InfoMainVC.swift in Sources */,
 				357B5835203A988300663628 /* Company_InfoVC.swift in Sources */,
 				356BDEDD203129C800483C54 /* BeaconEventVC.swift in Sources */,
+				3590B10C203D2FA70047DFA8 /* CompanyModel.swift in Sources */,
+				3590B10F203D52440047DFA8 /* Key.swift in Sources */,
 				357B5833203A984C00663628 /* Recruitment_InfoVC.swift in Sources */,
 				C4A8087B20282A27007D5812 /* AppDelegate.swift in Sources */,
 				35732E462031169700AC13D4 /* MapVC.swift in Sources */,
 				C4A80890202949A3007D5812 /* MainVC.swift in Sources */,
 				35BDF13F203D097B005CB27B /* PaddingLabel.swift in Sources */,
+				3590B109203D2D010047DFA8 /* BeaconModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +491,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Career",
 					"$(PROJECT_DIR)/Career/DaumMapFramework",
+					"$(PROJECT_DIR)/Career/ParseFramework",
 				);
 				INFOPLIST_FILE = Career/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -441,6 +514,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Career",
 					"$(PROJECT_DIR)/Career/DaumMapFramework",
+					"$(PROJECT_DIR)/Career/ParseFramework",
 				);
 				INFOPLIST_FILE = Career/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

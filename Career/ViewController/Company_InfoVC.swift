@@ -27,15 +27,35 @@ class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderD
         
         self.contentsView.addSubview(self.mapView!)
         
-        
+        let poiItems = createPoiItemToCompanyPosition(position: .init(latitude: 37.550250, longitude: 126.985576) , name: "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ")
+    
+        if poiItems.count != 0 {
+            self.mapView?.addPOIItems(poiItems)
+            
+            self.mapView?.setMapCenter(poiItems[0].mapPoint, animated: true)
+            self.mapView?.setZoomLevel(1, animated: true)
+            //        self.mapView?.isUserInteractionEnabled = false//지도움직임 제거
+        }
     }
     
-    func createPoiItemToCompanyPosition(position : MTMapPointGeo) -> [MTMapPOIItem] {
+    func createPoiItemToCompanyPosition(position: MTMapPointGeo, name: String) -> [MTMapPOIItem] {
         var poiItems = [MTMapPOIItem]()
         
         let poiItem = MTMapPOIItem()
+
+        poiItem.markerType = .customImage
+        poiItem.customImage = UIImage(named: "map_pin_blue.png")
         
-//        poiItem.markerType = .
+//
+//        poiItem.markerSelectedType = .customImage
+//        poiItem.customSelectedImage = UIImage(named: "map_pin_red.png")
+//
+        poiItem.mapPoint = MTMapPoint(geoCoord: position)
+        poiItem.showAnimationType = .noAnimation
+        
+        //마커 벌룬 생성
+        
+        poiItems.append(poiItem)
         
         return poiItems
     }

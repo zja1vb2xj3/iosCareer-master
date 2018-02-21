@@ -9,13 +9,15 @@
 import UIKit
 
 class MainVC: UIViewController {
-
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet weak var banner: UIImageView!
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
     }
     
     
