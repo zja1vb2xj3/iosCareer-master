@@ -18,10 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var locationManager: CLLocationManager?
     var tempBeaconID: String?
     //컨텐츠 변수
+    //로딩때 받아오는 변수
     var beaconModels = [BeaconModel]()
+    var companyListModels = [CompanyListModel]()//리스트모델
+    //부스번호 키 companyModel이 값 dic
     var companyDic = [String : [CompanyModel]]()
     
-    //부스번호 키 companyModel이 값 dic
+    var beaconModelDic = [String: [BeaconModel]]()
+    
     struct BeaconContentsTable {
         let TABLENAME: String = "TB_Beacon_Contents_Ko"
         let BCS_IDX: String = "BCS_IDX"
@@ -36,9 +40,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     //찾아진 부스 범위로 회사 데이터에 동일한 부스 범위를 검색해서 컨텐츠를 받아옴
 
     
-//    struct CompanyContentsTable {
-//        <#fields#>
-//    }
+    struct CompanyContentsTable {
+        let TABLENAME: String = "TB_Company_Ko"
+        let CPY_IDX: String = "CPY_IDX"
+        let CPY_LOGO: String =  "CPY_LOGO"
+        let CPY_TITLE: String = "CPY_TITLE"
+        
+        let CPY_RECRUIT_PART: String = "CPY_RECRUIT_PART"//모집부분
+        let CPY_JOB_DESCRIPTION: String = "CPY_JOB_DESCRIPTION"//근무내용
+        let CPY_CAREER: String = "CPY_CAREER"//경력사항
+        let CPY_RECRUIT_NUM: String = "CPY_RECRUIT_NUM"//모집인원
+        let CPY_ELIGIBILITY: String = "CPY_ELIGIBILITY"//자격요건
+        let CPY_WORK_TYPE: String = "CPY_WORK_TYPE"//근무형태
+        let CPY_SALARY: String = "CPY_SALARY"//급여
+        let CPY_WORK_PLACE: String = "CPY_WORK_PLACE"//근무지
+        let CPY_SCREENING: String = "CPY_SCREENING"//전형방법
+        let CPY_SUBMISSION: String = "CPY_SUBMISSION"//제출서류
+        let CPY_WELFARE: String = "CPY_WELFARE"//복리후생
+        let CPY_CEO: String = "CPY_CEO"//대표자
+        let CPY_PARTICIPATE: String = "CPY_PARTICIPATE"//참여지역
+        let CPY_LOCATION: String = "CPY_LOCATION"//위치
+        
+        let CPY_HEAD_OFFICE: String = "CPY_HEAD_OFFICE"//본사/연구소
+        let CPY_FACTORY: String = "CPY_FACTORY"//국내공장
+        let CPY_PRODUCTS: String = "CPY_PRODUCTS"//주요생산품
+        let CPY_EXP: String = "CPY_EXP"//회사소개
+        let CPY_HOMEPAGE: String = "CPY_HOMEPAGE"//홈페이지
+        let CPY_CONTACT_NUMBER: String = "CPY_CONTACT_NUMBER"//전화번호
+    }
   
     
     func getBeaconContentsData(){
@@ -61,7 +90,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     self.beaconModels.append(beaconModel)
                 }//end for
             }//end check nil
-           NotificationCenter.default.post(name: Notification.Name(rawValue: "Beacon") , object: nil)
+           NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.LoadSuccessNotification_Key) , object: nil)
+        })
+    }
+    
+    //리스트에 필요한 데이터를 로딩때 가져옴
+    func getCompanyListData() {
+        let table = CompanyContentsTable()
+        
+        let query = PFQuery(className: table.TABLENAME)
+        query.order(byAscending: table.CPY_IDX)
+        
+        query.findObjectsInBackground(block: {(objects: [PFObject]?, error:Error?) in
+            if error == nil{
+                for object in objects!{
+                    let companyListModel = CompanyListModel()
+                    
+                    let idx = object.object(forKey: table.CPY_IDX) as! Int
+                    let  boothNumber: String = "0" + String(idx)
+                    
+                    companyListModel.boothNumber = boothNumber
+                    companyListModel.imageURLStr = object.object(forKey: table.CPY_LOGO) as! String
+                    companyListModel.title = object.object(forKey: table.CPY_TITLE) as! String
+                    companyListModel.recruitPart = object.object(forKey: table.CPY_RECRUIT_PART) as! String
+
+                    self.companyListModels.append(companyListModel)
+                }//end for
+            }//end check nil
+            //파스에 접속이 끝나는 루프
+            NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.LoadSuccessNotification_Key) , object: nil)
         })
     }
 
@@ -96,12 +153,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     let sign = deduplicationValue(beaconId: beaconId)
                     
                     if sign == false{
-                        //중복이 아님
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.beaconOccurNotification_Key) , object: nil)
                     }
                     else{
                         continue
                     }
-                    
                     print(beaconId!)
                     print(sign)
                 }
@@ -134,7 +190,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.locationManager?.requestWhenInUseAuthorization()
         self.locationManager!.startRangingBeacons(in: beaconRegion)
         
-
     }
     
     func parseInit(launchOptions : [UIApplicationLaunchOptionsKey : Any]?) {
@@ -173,50 +228,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 //        self.saveContext()
     }
 
-    // MARK: - Core Data stack
-
-//    lazy var persistentContainer: NSPersistentContainer = {
-//        /*
-//         The persistent container for the application. This implementation
-//         creates and returns a container, having loaded the store for the
-//         application to it. This property is optional since there are legitimate
-//         error conditions that could cause the creation of the store to fail.
-//        */
-//        let container = NSPersistentContainer(name: "Career")
-//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//            if let error = error as NSError? {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//
-//                /*
-//                 Typical reasons for an error here include:
-//                 * The parent directory does not exist, cannot be created, or disallows writing.
-//                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-//                 * The device is out of space.
-//                 * The store could not be migrated to the current model version.
-//                 Check the error message to determine what the actual problem was.
-//                 */
-//                fatalError("Unresolved error \(error), \(error.userInfo)")
-//            }
-//        })
-//        return container
-//    }()
-
-    // MARK: - Core Data Saving support
-
-//    func saveContext () {
-//        let context = persistentContainer.viewContext
-//        if context.hasChanges {
-//            do {
-//                try context.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nserror = error as NSError
-//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//            }
-//        }
-//    }
+ 
 
 }
 

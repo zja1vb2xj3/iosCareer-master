@@ -34,6 +34,9 @@
 		3590B109203D2D010047DFA8 /* BeaconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B108203D2D010047DFA8 /* BeaconModel.swift */; };
 		3590B10C203D2FA70047DFA8 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B10B203D2FA70047DFA8 /* CompanyModel.swift */; };
 		3590B10F203D52440047DFA8 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B10E203D52440047DFA8 /* Key.swift */; };
+		3590B111203D69430047DFA8 /* URLLoadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B110203D69430047DFA8 /* URLLoadImageView.swift */; };
+		3590B115203D7E110047DFA8 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B114203D7E110047DFA8 /* AlertManager.swift */; };
+		3590B117203D81CA0047DFA8 /* CompanyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590B116203D81CA0047DFA8 /* CompanyListModel.swift */; };
 		35BDF13F203D097B005CB27B /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BDF13E203D097B005CB27B /* PaddingLabel.swift */; };
 		C4A8087B20282A27007D5812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8087A20282A27007D5812 /* AppDelegate.swift */; };
 		C4A8087D20282A27007D5812 /* LoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8087C20282A27007D5812 /* LoadVC.swift */; };
@@ -72,6 +75,9 @@
 		3590B108203D2D010047DFA8 /* BeaconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconModel.swift; sourceTree = "<group>"; };
 		3590B10B203D2FA70047DFA8 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		3590B10E203D52440047DFA8 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		3590B110203D69430047DFA8 /* URLLoadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLLoadImageView.swift; sourceTree = "<group>"; };
+		3590B114203D7E110047DFA8 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		3590B116203D81CA0047DFA8 /* CompanyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListModel.swift; sourceTree = "<group>"; };
 		35BDF13E203D097B005CB27B /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		35BDF140203D09DF005CB27B /* DaumMapBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaumMapBridgeHeader.h; sourceTree = "<group>"; };
 		C4A8087720282A27007D5812 /* Career.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Career.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +194,7 @@
 			children = (
 				3590B108203D2D010047DFA8 /* BeaconModel.swift */,
 				3590B10B203D2FA70047DFA8 /* CompanyModel.swift */,
+				3590B116203D81CA0047DFA8 /* CompanyListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				35BDF13E203D097B005CB27B /* PaddingLabel.swift */,
+				3590B110203D69430047DFA8 /* URLLoadImageView.swift */,
+				3590B114203D7E110047DFA8 /* AlertManager.swift */,
 			);
 			path = CustomMember;
 			sourceTree = "<group>";
@@ -334,15 +343,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3590B115203D7E110047DFA8 /* AlertManager.swift in Sources */,
 				357B582F203A80BA00663628 /* BeaconEventCell.swift in Sources */,
 				C4A8088320282A27007D5812 /* Career.xcdatamodeld in Sources */,
 				C4A8087D20282A27007D5812 /* LoadVC.swift in Sources */,
 				357B5831203A8E1900663628 /* InfoMainVC.swift in Sources */,
+				3590B111203D69430047DFA8 /* URLLoadImageView.swift in Sources */,
 				357B5835203A988300663628 /* Company_InfoVC.swift in Sources */,
 				356BDEDD203129C800483C54 /* BeaconEventVC.swift in Sources */,
 				3590B10C203D2FA70047DFA8 /* CompanyModel.swift in Sources */,
 				3590B10F203D52440047DFA8 /* Key.swift in Sources */,
 				357B5833203A984C00663628 /* Recruitment_InfoVC.swift in Sources */,
+				3590B117203D81CA0047DFA8 /* CompanyListModel.swift in Sources */,
 				C4A8087B20282A27007D5812 /* AppDelegate.swift in Sources */,
 				35732E462031169700AC13D4 /* MapVC.swift in Sources */,
 				C4A80890202949A3007D5812 /* MainVC.swift in Sources */,

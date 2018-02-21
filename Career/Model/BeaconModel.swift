@@ -9,9 +9,9 @@
 import Foundation
 
 class BeaconModel {
-    var range: String!
-    var id: String!
-    var major: String!
-    var minor: String!
-    var rssiCorrection: Int!
+     var range: String!
+     var id: String!
+     var major: String!
+     var minor: String!
+     var rssiCorrection: Int!
 }

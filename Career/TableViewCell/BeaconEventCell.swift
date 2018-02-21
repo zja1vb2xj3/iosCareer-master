@@ -10,7 +10,7 @@ import UIKit
 
 class BeaconEventCell: UITableViewCell {
     @IBOutlet weak var number: UILabel!
-    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var logo: URLLoadImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var content: UILabel!
     

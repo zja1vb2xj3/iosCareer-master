@@ -10,7 +10,7 @@ import UIKit
 
 class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderDelegate {
    
-     @IBOutlet weak var contentsView: UIView!
+    @IBOutlet weak var contentsView: UIView!
     @IBOutlet weak var mapArea: UIView!
    
     var mapView : MTMapView?
@@ -46,7 +46,6 @@ class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderD
         poiItem.markerType = .customImage
         poiItem.customImage = UIImage(named: "map_pin_blue.png")
         
-//
 //        poiItem.markerSelectedType = .customImage
 //        poiItem.customSelectedImage = UIImage(named: "map_pin_red.png")
 //
