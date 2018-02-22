@@ -18,12 +18,11 @@ class LoadVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         initNavigationItem()
         
-//        appDelegate.getBeaconContentsData()
+        appDelegate.getBeaconContentsData()        
         
-        appDelegate.getCompanyListData()
         //서버에서 데이터를 받는 과정이 끝나면 메인화면으로 넘어감
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.moveToMainVC), name: Notification.Name(rawValue: Key.NotificationNameKey.LoadSuccessNotification_Key) , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.moveToMainVC), name: Notification.Name(rawValue: Key.NotificationNameKey.loadSuccessNotification_Key) , object: nil)
     }
     
 

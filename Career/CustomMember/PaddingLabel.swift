@@ -17,11 +17,12 @@ class PaddingLabel: UILabel {
     
     override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
-        self.setNeedsLayout()
-        
+        self.lineBreakMode = .byWordWrapping
+        self.numberOfLines = 0
         self.layer.borderWidth = 0.5
         let borderColor = UIColor(displayP3Red: 189/255, green: 189/255, blue: 189/255, alpha: 1)
         self.layer.borderColor = borderColor.cgColor
+        self.setNeedsLayout()
         return super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
     }
 

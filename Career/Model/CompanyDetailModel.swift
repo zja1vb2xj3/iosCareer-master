@@ -7,10 +7,11 @@
 //
 
 import Foundation
-class CompanyModel{
-    var boothNumber: String!//부스번호
-    var imageURLStr: String!//로고
+class CompanyDetailModel{
+    //공통 네비게이션바 타이틀
     var title: String!//회사명
+    
+    //채용정보
     var recruitPart: String!//모집부분
     var jobDescription: String!//직무내용
     var career: String!//경력사항
@@ -23,11 +24,11 @@ class CompanyModel{
     var submission: String!//제출서류
     var welfare: String!//복리후생
     
+    //회사정보
+    var imageURLStr: String!//로고
     var ceoName: String!//대표자
     var participate: String! //참여지역
-    
     var location: MTMapPointGeo?//위도경도
-    
     var headOffice: String!//본사/연구소
     var inFactory: String!//국내공장
     var products: String!//주요생산품

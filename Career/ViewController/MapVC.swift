@@ -16,8 +16,8 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appDelegate.startScanning()
-
+        self.appDelegate.startScanning()
+    
         
     }
     
@@ -26,6 +26,7 @@ class MapVC: UIViewController {
     }
     
     @objc func beaconOccur(){
+        
         showAlert()
     }
     
@@ -36,25 +37,26 @@ class MapVC: UIViewController {
         
         //UIAlertActionStye.destructive 지정 글꼴 색상 변경
         let actionButton = UIAlertAction(title: "이동", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
-            let BeaconEventVC = self.storyboard?.instantiateViewController(withIdentifier: "BeaconEventVC") as! BeaconEventVC
-            self.navigationController?.pushViewController(BeaconEventVC, animated: true)
+            self.moveToMainVC()
         }
         
         alertManager.addActionButton(actionButton: actionButton)
         
         self.present(alertManager.getAlertController(),animated: true,completion: nil)
     }
+    
+    func moveToMainVC() {
+        let beaconOccurCompanyModels: [CompanyListModel] = self.appDelegate.beaconOccurCompanyListModels
+        
+        let companyTableVC = self.storyboard?.instantiateViewController(withIdentifier: "CompanyTableVC") as! CompanyTableVC
+        companyTableVC.companyListModels = beaconOccurCompanyModels
+        self.navigationController?.pushViewController(companyTableVC, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    func initView() {
-
-    }
-   
 
 
 }

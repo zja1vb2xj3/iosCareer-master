@@ -10,24 +10,35 @@ import UIKit
 
 class InfoMainVC: UIViewController {
 
+    @IBOutlet weak var companyTitle: UILabel!
     @IBOutlet weak var recruitment_Info_Button: UIButton!
     @IBOutlet weak var company_Info_Button: UIButton!
     
     @IBOutlet weak var subView: UIView!
     
+    var companyDetailModel: CompanyDetailModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("viewDidLoad")
+        NotificationCenter.default.removeObserver(self)
+        self.companyTitle.text = self.companyDetailModel.title
+    
         recruitment_Info_Button.addTarget(self, action: #selector(recruitment_Info_ButtonClick), for: .touchDown)
         company_Info_Button.addTarget(self, action: #selector(company_Info_ButtonClick), for: .touchDown)
         
         recruitment_Info_Button.backgroundColor = UIColor.yellow
         company_Info_Button.backgroundColor = UIColor.black
         
-        add(asChildViewController: recruitment_InfoVC)
+        updateSelfView(buttonindex: 0)
         
         print("infoMainVC")
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear")
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func recruitment_Info_ButtonClick(){
@@ -50,12 +61,16 @@ class InfoMainVC: UIViewController {
             removeChildView(asChildViewController: company_InfoVC)
             add(asChildViewController: recruitment_InfoVC)
         }
-        else{
+        else if buttonindex == 1{
             recruitment_Info_Button.backgroundColor = UIColor.black
             company_Info_Button.backgroundColor = UIColor.yellow
             
             removeChildView(asChildViewController: recruitment_InfoVC)
             add(asChildViewController: company_InfoVC)
+        }
+        else{
+            removeChildView(asChildViewController: company_InfoVC)
+            removeChildView(asChildViewController: recruitment_InfoVC)
         }
     }
     
@@ -86,6 +101,8 @@ class InfoMainVC: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "Recruitment_InfoVC") as! Recruitment_InfoVC
         
+        viewController.companyDetailModel = self.companyDetailModel
+        
         self.add(asChildViewController: viewController)
         
         return viewController
@@ -94,6 +111,8 @@ class InfoMainVC: UIViewController {
     private lazy var company_InfoVC: Company_InfoVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "Company_InfoVC") as! Company_InfoVC
+       
+        viewController.companyDetailModel = self.companyDetailModel
         
         self.add(asChildViewController: viewController)
         

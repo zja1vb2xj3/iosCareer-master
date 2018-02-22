@@ -19,59 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var tempBeaconID: String?
     //컨텐츠 변수
     //로딩때 받아오는 변수
-    var beaconModels = [BeaconModel]()
-    var companyListModels = [CompanyListModel]()//리스트모델
-    //부스번호 키 companyModel이 값 dic
-    var companyDic = [String : [CompanyModel]]()
+    var beaconModelDic = [String : BeaconModel]()
+    var companyListModelDic = [Int: CompanyListModel]()
     
-    var beaconModelDic = [String: [BeaconModel]]()
+    var companyListModels = [CompanyListModel]()//리스트 클릭시 모델
     
-    struct BeaconContentsTable {
-        let TABLENAME: String = "TB_Beacon_Contents_Ko"
-        let BCS_IDX: String = "BCS_IDX"
-        let BCS_BOOTH_RANGE: String = "BCS_BOOTH_RANGE"
-        let BCS_BEACON_ID: String = "BCS_BEACON_ID"
-        let BCS_BEACON_MAJOR: String = "BCS_BEACON_MAJOR"
-        let BCS_BEACON_MINOR: String = "BCS_BEACON_MINOR"
-        let BCS_RSSI_COMPLEMENT: String = "BCS_RSSI_COMPLEMENT"
-    }
-    //비콘 데이터를 로딩때 받아올때 키는 비콘아이디 값은 부스범위
-    //비콘이 반응됫을때 비콘 아이디로 부스범위를 찾는다
-    //찾아진 부스 범위로 회사 데이터에 동일한 부스 범위를 검색해서 컨텐츠를 받아옴
-
-    
-    struct CompanyContentsTable {
-        let TABLENAME: String = "TB_Company_Ko"
-        let CPY_IDX: String = "CPY_IDX"
-        let CPY_LOGO: String =  "CPY_LOGO"
-        let CPY_TITLE: String = "CPY_TITLE"
-        
-        let CPY_RECRUIT_PART: String = "CPY_RECRUIT_PART"//모집부분
-        let CPY_JOB_DESCRIPTION: String = "CPY_JOB_DESCRIPTION"//근무내용
-        let CPY_CAREER: String = "CPY_CAREER"//경력사항
-        let CPY_RECRUIT_NUM: String = "CPY_RECRUIT_NUM"//모집인원
-        let CPY_ELIGIBILITY: String = "CPY_ELIGIBILITY"//자격요건
-        let CPY_WORK_TYPE: String = "CPY_WORK_TYPE"//근무형태
-        let CPY_SALARY: String = "CPY_SALARY"//급여
-        let CPY_WORK_PLACE: String = "CPY_WORK_PLACE"//근무지
-        let CPY_SCREENING: String = "CPY_SCREENING"//전형방법
-        let CPY_SUBMISSION: String = "CPY_SUBMISSION"//제출서류
-        let CPY_WELFARE: String = "CPY_WELFARE"//복리후생
-        let CPY_CEO: String = "CPY_CEO"//대표자
-        let CPY_PARTICIPATE: String = "CPY_PARTICIPATE"//참여지역
-        let CPY_LOCATION: String = "CPY_LOCATION"//위치
-        
-        let CPY_HEAD_OFFICE: String = "CPY_HEAD_OFFICE"//본사/연구소
-        let CPY_FACTORY: String = "CPY_FACTORY"//국내공장
-        let CPY_PRODUCTS: String = "CPY_PRODUCTS"//주요생산품
-        let CPY_EXP: String = "CPY_EXP"//회사소개
-        let CPY_HOMEPAGE: String = "CPY_HOMEPAGE"//홈페이지
-        let CPY_CONTACT_NUMBER: String = "CPY_CONTACT_NUMBER"//전화번호
-    }
-  
-    
+    //로딩때 비콘 컨텐츠를 가져오는 함수
     func getBeaconContentsData(){
-        let table = BeaconContentsTable()
+        let table = Key.BeaconContentsTableKey.self
         
         let query = PFQuery(className: table.TABLENAME)
         query.order(byAscending: table.BCS_IDX)
@@ -87,16 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     beaconModel.minor = object.object(forKey: table.BCS_BEACON_MINOR) as! String
                     beaconModel.rssiCorrection = object.object(forKey: table.BCS_RSSI_COMPLEMENT) as! Int
                     
-                    self.beaconModels.append(beaconModel)
+                    self.beaconModelDic[beaconModel.id] = beaconModel
                 }//end for
             }//end check nil
-           NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.LoadSuccessNotification_Key) , object: nil)
+            self.getCompanyListData()
         })
     }
     
     //리스트에 필요한 데이터를 로딩때 가져옴
     func getCompanyListData() {
-        let table = CompanyContentsTable()
+        let table = Key.CompanyContentsTableKey.self
         
         let query = PFQuery(className: table.TABLENAME)
         query.order(byAscending: table.CPY_IDX)
@@ -114,13 +69,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     companyListModel.title = object.object(forKey: table.CPY_TITLE) as! String
                     companyListModel.recruitPart = object.object(forKey: table.CPY_RECRUIT_PART) as! String
 
+                    /*
+                     *비콘 반응시 데이터를 가져올 dic
+                     *key idx == booth number
+                     */
+                    print("loadDic Idx", idx)
+                    self.companyListModelDic[idx] = companyListModel
+                    
                     self.companyListModels.append(companyListModel)
                 }//end for
             }//end check nil
             //파스에 접속이 끝나는 루프
-            NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.LoadSuccessNotification_Key) , object: nil)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.loadSuccessNotification_Key) , object: nil)
         })
     }
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -137,6 +100,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.locationManager?.requestWhenInUseAuthorization()
     }
     
+    //companyListDic의 결과 companyModel들을 담을 array생성
+    var beaconOccurCompanyListModels: [CompanyListModel] = []
+    
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
     
         let filteredBeacons = beacons.filter{ $0.proximity != CLProximity.unknown && $0.rssi <= -25 }
@@ -145,14 +111,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             for i: Int in 0 ..< filteredBeacons.count{
                 if filteredBeacons[i].major == 1804{
                     
-                    let major : String = filteredBeacons[i].major.stringValue
-                    let minor : String = filteredBeacons[i].minor.stringValue
+                    let major : String! = filteredBeacons[i].major.stringValue
+                    let minor : String! = filteredBeacons[i].minor.stringValue
                     
-                    let beaconId : String? = "m\(major)_\(minor)"
+                    let beaconId : String! = "m" + major + "_" + minor//비콘아이디생성
                     
+                    //비콘 중복제거
                     let sign = deduplicationValue(beaconId: beaconId)
                     
                     if sign == false{
+                        //비콘반응 발생 noti
+                        print("beaconId: \(beaconId)")
+                        let beaconModel: BeaconModel = self.beaconModelDic[beaconId]!
+                        
+                        let rangeArr: [String] = self.separationStr(value: beaconModel.range, separatedBy: "~")
+                        
+                        //비콘 반응시 rangeArr[0] ~ rangeArr[1] 반복문
+                        
+                        let startValue : Int = Int(rangeArr[0])!
+                        let endValue : Int = Int(rangeArr[1])!
+                        print(startValue)
+                        print(endValue)
+                        self.beaconOccurCompanyListModels = []//초기화
+                        
+                        for  i in startValue ... 5 {
+                            print("count: \(i)")
+                            let companyListModel: CompanyListModel = self.companyListModelDic[i]!
+                            self.beaconOccurCompanyListModels.append(companyListModel)
+                        }
+                        
                         NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.beaconOccurNotification_Key) , object: nil)
                     }
                     else{
@@ -166,6 +153,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         else{
             print("beacon not find")
         }
+    }
+    
+    //문자열 separatedBy 기준 분할
+    func separationStr(value: String, separatedBy: String)-> [String]{
+        let valueArr: [String] = value.components(separatedBy: separatedBy)
+        
+        return valueArr
     }
     
     //중복제거
