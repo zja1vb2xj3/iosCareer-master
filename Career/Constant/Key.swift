@@ -57,5 +57,10 @@ import Foundation
         static let CPY_CONTACT_NUMBER: String = "CPY_CONTACT_NUMBER"//전화번호
     }
     
+    struct moveVCKey {
+        static let BeaconCompanyTableVCKey: Int = 0
+        static let SearchCompanyTableVCKey: Int = 1
+    }
+    
     
 }

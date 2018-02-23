@@ -16,7 +16,6 @@ class URLLoadImageView: UIImageView {
         
         if let image = UIImage(data: try! Data(contentsOf: imageURL)){
             
-            
             self.image = image
         }
     }

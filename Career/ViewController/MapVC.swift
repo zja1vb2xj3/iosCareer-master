@@ -37,7 +37,7 @@ class MapVC: UIViewController {
         
         //UIAlertActionStye.destructive 지정 글꼴 색상 변경
         let actionButton = UIAlertAction(title: "이동", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
-            self.moveToMainVC()
+            self.moveToCompanyTableVC()
         }
         
         alertManager.addActionButton(actionButton: actionButton)
@@ -45,12 +45,10 @@ class MapVC: UIViewController {
         self.present(alertManager.getAlertController(),animated: true,completion: nil)
     }
     
-    func moveToMainVC() {
-        let beaconOccurCompanyModels: [CompanyListModel] = self.appDelegate.beaconOccurCompanyListModels
+    func moveToCompanyTableVC() {
+        let beaconCompanyTableVC = self.storyboard?.instantiateViewController(withIdentifier: "BeaconCompanyTableVC") as! BeaconCompanyTableVC
         
-        let companyTableVC = self.storyboard?.instantiateViewController(withIdentifier: "CompanyTableVC") as! CompanyTableVC
-        companyTableVC.companyListModels = beaconOccurCompanyModels
-        self.navigationController?.pushViewController(companyTableVC, animated: true)
+        self.navigationController?.pushViewController(beaconCompanyTableVC, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

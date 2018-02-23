@@ -81,10 +81,37 @@ class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderD
     }
     
     @IBAction func homePageButtonClick(_ sender: UIButton) {
+        print("홈페이지 버튼 클릭")
+        
+        let homePageStr = companyDetailModel.homePage
+        
+        if homePageStr != ""{
+            UIApplication.shared.open(URL(string: "http://\(homePageStr!)")! , options: [:], completionHandler: nil)
+        }
+        else{
+            //Alert 생성필요
+            print("홈페이지 가 존재하지 않음.")
+        }
     }
     
     @IBAction func callButtonClick(_ sender: UIButton) {
-        
+        print("전화하기 버튼 클릭")
+        let numberStr = companyDetailModel.contactNumber
+        //number값이 존재한다면
+        if numberStr != ""{
+            print("값이 존재")
+            if let url = URL(string: "tel://\((numberStr!))"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+            else{
+                //Alert 생성필요
+                print("번호가 존재하지 않음.")
+            }
+        }
     }
-
-}
+ 
+}//end VC

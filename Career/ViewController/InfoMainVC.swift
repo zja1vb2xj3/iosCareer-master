@@ -9,7 +9,8 @@
 import UIKit
 
 class InfoMainVC: UIViewController {
-
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet weak var companyTitle: UILabel!
     @IBOutlet weak var recruitment_Info_Button: UIButton!
     @IBOutlet weak var company_Info_Button: UIButton!
@@ -17,6 +18,8 @@ class InfoMainVC: UIViewController {
     @IBOutlet weak var subView: UIView!
     
     var companyDetailModel: CompanyDetailModel!
+    
+    var vcIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +99,19 @@ class InfoMainVC: UIViewController {
         super.didReceiveMemoryWarning()
     
     }
+    @IBAction func backButtonClick(_ sender: UIButton) {
+        if vcIndex == 0{
+            let beaconCompanyTableVC = self.storyboard?.instantiateViewController(withIdentifier: "BeaconCompanyTableVC") as! BeaconCompanyTableVC
+            
+            self.navigationController?.pushViewController(beaconCompanyTableVC, animated: true)
+        }
+        else{
+            let searchCompanyTableVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchCompanyTableVC") as! SearchCompanyTableVC
+            
+            
+            self.navigationController?.pushViewController(searchCompanyTableVC, animated: true)
+        }
+    }
     
     private lazy var recruitment_InfoVC: Recruitment_InfoVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -111,7 +127,7 @@ class InfoMainVC: UIViewController {
     private lazy var company_InfoVC: Company_InfoVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "Company_InfoVC") as! Company_InfoVC
-       
+        
         viewController.companyDetailModel = self.companyDetailModel
         
         self.add(asChildViewController: viewController)
