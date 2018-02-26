@@ -11,4 +11,5 @@ class NoticeModel{
     var title: String!
     var occurTime: String!
     var content: String!
+    var expanded : Bool! = false
 }

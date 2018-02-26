@@ -1,19 +1,18 @@
 //
-//  NoticeCell.swift
+//  TableViewCell.swift
 //  Career
 //
-//  Created by Beaconyx Corp. on 2018. 2. 23..
+//  Created by Beaconyx Corp. on 2018. 2. 26..
 //  Copyright © 2018년 Beaconyx. All rights reserved.
 //
 
 import UIKit
 
-class NoticeTitleCell: UITableViewCell {
+class NoticeCell: UITableViewCell {
 
-    @IBOutlet weak var title: PaddingLabel!
-    @IBOutlet weak var occurTime: UILabel!
+    @IBOutlet weak var content: UITextView!
+    @IBOutlet weak var time: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

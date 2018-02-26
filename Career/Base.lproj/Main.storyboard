@@ -413,26 +413,26 @@
                                 <rect key="frame" x="0.0" y="71" width="320" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NoticeTitleCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeTitleCell" rowHeight="48" id="poe-py-9Ml" customClass="NoticeTitleCell" customModule="Career" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="48"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NoticeTitleCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeTitleCell" rowHeight="97" id="poe-py-9Ml" customClass="NoticeCell" customModule="Career" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="poe-py-9Ml" id="BUG-IW-5ru">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="96.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v3-td-Usg">
-                                                    <rect key="frame" x="15" y="11" width="192" height="25.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0wP-YW-8mu">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="55"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="192" id="d9S-rF-QdR"/>
+                                                        <constraint firstAttribute="height" constant="55" id="ed9-IZ-8pX"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.00.00 00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rH-KE-bSz">
-                                                    <rect key="frame" x="218" y="11" width="95" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-kD-If6">
+                                                    <rect key="frame" x="15" y="72" width="290" height="13.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="95" id="gYL-DM-C5o"/>
+                                                        <constraint firstAttribute="height" constant="13.5" id="QGs-gh-oum"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -440,19 +440,19 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4rH-KE-bSz" firstAttribute="top" secondItem="BUG-IW-5ru" secondAttribute="top" constant="11" id="9qf-qq-sTm"/>
-                                                <constraint firstAttribute="bottom" secondItem="4rH-KE-bSz" secondAttribute="bottom" constant="11" id="9ux-DZ-jR5"/>
-                                                <constraint firstAttribute="bottom" secondItem="5v3-td-Usg" secondAttribute="bottom" constant="11" id="Sa3-AI-JWp"/>
-                                                <constraint firstItem="5v3-td-Usg" firstAttribute="top" secondItem="BUG-IW-5ru" secondAttribute="top" constant="11" id="b9p-ek-TD6"/>
-                                                <constraint firstItem="5v3-td-Usg" firstAttribute="leading" secondItem="BUG-IW-5ru" secondAttribute="leading" constant="15" id="fhf-9T-mar"/>
-                                                <constraint firstAttribute="trailing" secondItem="4rH-KE-bSz" secondAttribute="trailing" constant="7" id="nvg-iL-xyU"/>
-                                                <constraint firstItem="4rH-KE-bSz" firstAttribute="height" secondItem="5v3-td-Usg" secondAttribute="height" id="uW6-Df-b11"/>
-                                                <constraint firstItem="4rH-KE-bSz" firstAttribute="leading" secondItem="5v3-td-Usg" secondAttribute="trailing" constant="11" id="xcc-bs-aGA"/>
+                                                <constraint firstItem="vVO-kD-If6" firstAttribute="top" secondItem="0wP-YW-8mu" secondAttribute="bottom" constant="17" id="89S-wv-RZK"/>
+                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="top" secondItem="BUG-IW-5ru" secondAttribute="top" id="KqH-f8-fUb"/>
+                                                <constraint firstItem="vVO-kD-If6" firstAttribute="width" secondItem="0wP-YW-8mu" secondAttribute="width" id="Pgb-V6-lTL"/>
+                                                <constraint firstItem="vVO-kD-If6" firstAttribute="leading" secondItem="BUG-IW-5ru" secondAttribute="leading" constant="15" id="Sai-aw-l2h"/>
+                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="centerX" secondItem="BUG-IW-5ru" secondAttribute="centerX" id="bcR-Qi-gX3"/>
+                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="leading" secondItem="BUG-IW-5ru" secondAttribute="leading" constant="15" id="oLl-V3-2Nh"/>
+                                                <constraint firstItem="vVO-kD-If6" firstAttribute="centerX" secondItem="BUG-IW-5ru" secondAttribute="centerX" id="oRt-el-La5"/>
+                                                <constraint firstAttribute="bottom" secondItem="vVO-kD-If6" secondAttribute="bottom" constant="11" id="qjD-jP-qcY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="occurTime" destination="4rH-KE-bSz" id="ADR-aX-aIZ"/>
-                                            <outlet property="title" destination="5v3-td-Usg" id="wiF-o5-tDP"/>
+                                            <outlet property="content" destination="0wP-YW-8mu" id="8lW-Ae-tAl"/>
+                                            <outlet property="time" destination="vVO-kD-If6" id="axt-pJ-Ryh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1913,7 +1913,7 @@
         <image name="not_occur_notification_icon.png" width="109" height="101"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ejT-34-1Mu"/>
+        <segue reference="lIq-5S-g8Z"/>
         <segue reference="I3z-5E-1xZ"/>
     </inferredMetricsTieBreakers>
 </document>
