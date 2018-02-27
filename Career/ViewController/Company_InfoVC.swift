@@ -14,7 +14,7 @@ class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderD
     @IBOutlet weak var mapArea: UIView!
    
     @IBOutlet weak var logo: URLLoadImageView!
-    var mapView : MTMapView?
+    var mapView : MTMapView!
     @IBOutlet weak var content1: PaddingLabel!
     @IBOutlet weak var content2: PaddingLabel!
     @IBOutlet weak var content3: PaddingLabel!
@@ -38,8 +38,8 @@ class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderD
     
     override func viewDidAppear(_ animated: Bool) {
         self.mapView = MTMapView(frame: self.mapArea.frame)
-        self.mapView?.delegate = self
-        self.mapView?.baseMapType = .standard
+        self.mapView.delegate = self
+        self.mapView.baseMapType = .standard
         
         self.contentsView.addSubview(self.mapView!)
         
@@ -51,9 +51,36 @@ class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderD
             self.mapView?.setMapCenter(poiItems[0].mapPoint, animated: true)
             self.mapView?.setZoomLevel(1, animated: true)
             self.mapView?.isUserInteractionEnabled = false//지도움직임 제거
+            
+            self.mapArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickMapArea)))
         }
     }
     
+    
+    @objc func clickMapArea(){
+        let alertManager = AlertManager()
+        
+        alertManager.createAlert(title: "지도영역클릭", message: "이동 버튼 클릭 시 지도앱으로 이동합니다.")
+        
+        let actionButton = UIAlertAction(title: "이동", style: .destructive){ (action: UIAlertAction) in
+            UIApplication.shared.open(URL(string: "daummaps://look?p=\(self.companyDetailModel.location!.latitude),\(self.companyDetailModel.location!.longitude)")!, options: [:], completionHandler: nil)
+        }
+        
+        alertManager.addActionButton(actionButton: actionButton)
+        self.present(alertManager.getAlertController(), animated: true, completion: nil)
+    }
+    
+    
+//
+//    func mapView(_ mapView: MTMapView!, dragStartedOn mapPoint: MTMapPoint!) {
+//        print("지도화면 드래그")
+//        let alert = AlertManager()
+//
+//
+//
+//        UIApplication.shared.open(URL(string: "daummaps://look?p=\(companyDetailModel.location!.latitude),\(companyDetailModel.location!.longitude)")!, options: [:], completionHandler: nil)
+//    }
+//
     func createPoiItemToCompanyPosition(position: MTMapPointGeo, name: String) -> [MTMapPOIItem] {
         var poiItems = [MTMapPOIItem]()
         

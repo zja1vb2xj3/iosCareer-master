@@ -413,26 +413,26 @@
                                 <rect key="frame" x="0.0" y="71" width="320" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NoticeTitleCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeTitleCell" rowHeight="97" id="poe-py-9Ml" customClass="NoticeCell" customModule="Career" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="97"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NoticeTitleCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeTitleCell" rowHeight="85" id="poe-py-9Ml" customClass="NoticeCell" customModule="Career" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="poe-py-9Ml" id="BUG-IW-5ru">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0wP-YW-8mu">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="55" id="ed9-IZ-8pX"/>
+                                                        <constraint firstAttribute="height" constant="55" id="NaC-si-0u7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-kD-If6">
-                                                    <rect key="frame" x="15" y="72" width="290" height="13.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.00.00 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-kD-If6">
+                                                    <rect key="frame" x="15" y="63" width="290" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="13.5" id="QGs-gh-oum"/>
+                                                        <constraint firstAttribute="height" constant="22" id="uCS-bY-4sR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -440,14 +440,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="vVO-kD-If6" firstAttribute="top" secondItem="0wP-YW-8mu" secondAttribute="bottom" constant="17" id="89S-wv-RZK"/>
-                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="top" secondItem="BUG-IW-5ru" secondAttribute="top" id="KqH-f8-fUb"/>
-                                                <constraint firstItem="vVO-kD-If6" firstAttribute="width" secondItem="0wP-YW-8mu" secondAttribute="width" id="Pgb-V6-lTL"/>
-                                                <constraint firstItem="vVO-kD-If6" firstAttribute="leading" secondItem="BUG-IW-5ru" secondAttribute="leading" constant="15" id="Sai-aw-l2h"/>
-                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="centerX" secondItem="BUG-IW-5ru" secondAttribute="centerX" id="bcR-Qi-gX3"/>
-                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="leading" secondItem="BUG-IW-5ru" secondAttribute="leading" constant="15" id="oLl-V3-2Nh"/>
-                                                <constraint firstItem="vVO-kD-If6" firstAttribute="centerX" secondItem="BUG-IW-5ru" secondAttribute="centerX" id="oRt-el-La5"/>
-                                                <constraint firstAttribute="bottom" secondItem="vVO-kD-If6" secondAttribute="bottom" constant="11" id="qjD-jP-qcY"/>
+                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="leading" secondItem="BUG-IW-5ru" secondAttribute="leading" constant="15" id="79b-EM-2ZR"/>
+                                                <constraint firstAttribute="bottom" secondItem="vVO-kD-If6" secondAttribute="bottom" constant="-0.5" id="8Ez-b9-BIz"/>
+                                                <constraint firstItem="vVO-kD-If6" firstAttribute="top" secondItem="0wP-YW-8mu" secondAttribute="bottom" constant="8" id="L4w-ZT-a0a"/>
+                                                <constraint firstItem="vVO-kD-If6" firstAttribute="centerX" secondItem="BUG-IW-5ru" secondAttribute="centerX" id="Luw-qM-8bs"/>
+                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="top" secondItem="BUG-IW-5ru" secondAttribute="top" id="MiT-I3-xOM"/>
+                                                <constraint firstItem="0wP-YW-8mu" firstAttribute="centerX" secondItem="BUG-IW-5ru" secondAttribute="centerX" id="f5P-cB-MtE"/>
+                                                <constraint firstItem="vVO-kD-If6" firstAttribute="leading" secondItem="BUG-IW-5ru" secondAttribute="leading" constant="15" id="zK9-qa-8tc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -23,7 +23,7 @@ class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Ex
         
         noticeModel.title = "제목1"
         noticeModel.occurTime = "2018.00.00 00:01"
-        noticeModel.content = "내용1"
+        noticeModel.content = "내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1"
         
         let noticeModel2: NoticeModel = NoticeModel()
         
@@ -31,8 +31,16 @@ class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Ex
         noticeModel2.occurTime = "2018.00.00 00:02"
         noticeModel2.content = "내용2"
         
+        let noticeModel3: NoticeModel = NoticeModel()
+        
+        noticeModel3.title = "제목1"
+        noticeModel3.occurTime = "2018.00.00 00:01"
+        noticeModel3.content = "내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1"
+ 
         self.noticeModels.append(noticeModel)
         self.noticeModels.append(noticeModel2)
+        self.noticeModels.append(noticeModel3)
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,10 +48,11 @@ class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Ex
         cell.selectionStyle = UITableViewCellSelectionStyle.none
 
         cell.content.text = noticeModels[indexPath.section].content
-        cell.content.backgroundColor = UIColor.blue
-//        cell.content.textColor = UIColor.white
+//        cell.content.backgroundColor = UIColor.blue
+        cell.content.bounces = false //스크롤 바운스 제거
+        
         cell.time.text = noticeModels[indexPath.section].occurTime
-//        cell.time.textColor = UIColor.white
+//        cell.time.backgroundColor = UIColor.brown
         
         return cell
     }
@@ -62,7 +71,7 @@ class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Ex
         return 1 //내용뷰 갯수
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {//내용뷰 길이
-       let rowHeight : CGFloat = 100
+       let rowHeight : CGFloat = 80
        
         if(noticeModels[indexPath.section].expanded){
             return rowHeight
@@ -108,6 +117,7 @@ class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Ex
         headerView.textLabel?.text = noticeModels[section].title
         headerView.textLabel?.textColor = UIColor.white
        
+        //헤더에 label 추가시 필요
 //        let timeOccurLabel = UILabel(frame: CGRect(x: 0, y: 12, width: tableView.frame.width - 20, height: 20))
 //
 //        timeOccurLabel.textAlignment = .right
@@ -116,7 +126,7 @@ class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Ex
 //        timeOccurLabel.font = timeOccurLabel.font.withSize(11)
 //        timeOccurLabel.backgroundColor = UIColor.cyan//timeOccurLabel 영역확인
         
-        headerView.allowIcon = UIImageView(frame: CGRect(x: tableView.frame.width - 25, y: 12, width: 20, height: 20))
+        headerView.allowIcon = UIImageView(frame: CGRect(x: tableView.frame.width - 30, y: 12, width: 20, height: 20))
         headerView.allowIcon.image = UIImage(named: "right_arrow_icon")
         headerView.allowIcon.contentMode = .scaleAspectFit
      

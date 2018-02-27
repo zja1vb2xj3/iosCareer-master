@@ -15,10 +15,16 @@ class AlertManager {
         alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
     
-    func addActionButton(actionButton: UIAlertAction){
-         let cancelButton = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: nil)
+    func addActionButton(actionButton: UIAlertAction) {
+        let cancelButton = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(actionButton)
         alertController.addAction(cancelButton)
+    }
+    
+    func addSuccessButton(){
+        let successButton = UIAlertAction(title: "확인", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(successButton)
+
     }
     
     func getAlertController() -> UIAlertController {
