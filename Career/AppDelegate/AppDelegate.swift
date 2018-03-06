@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     var companyListModels = [CompanyListModel]()//리스트 클릭시 모델
     
+    var keyChainStr: String!
+    
     //로딩때 비콘 컨텐츠를 가져오는 함수
     func getBeaconContentsData(){
         let table = Key.BeaconContentsTableKey.self
@@ -68,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     companyListModel.imageURLStr = object.object(forKey: table.CPY_LOGO) as! String
                     companyListModel.title = object.object(forKey: table.CPY_TITLE) as! String
                     companyListModel.recruitPart = object.object(forKey: table.CPY_RECRUIT_PART) as! String
-
+                
                     /*
                      *비콘 반응시 데이터를 가져올 dic
                      *key idx == booth number
@@ -76,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     print("loadDic Idx", idx)
                     self.companyListModelDic[idx] = companyListModel
                     
-                    self.companyListModels.append(companyListModel)
+                    self.companyListModels.append(companyListModel)//searchCompanyTableVC에서 사용
                 }//end for
             }//end check nil
             //파스에 접속이 끝나는 루프
@@ -87,6 +89,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let keyChain = KeychainItemWrapper()
+        self.keyChainStr = keyChain.getBDA()
         
         parseInit(launchOptions: launchOptions)
         beaconInit()
@@ -134,9 +139,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                         print(endValue)
                         self.beaconOccurCompanyListModels = []//초기화
                         
-                        for  i in startValue ... 5 {
+                        for  i in startValue ... 5 {//실제론 end로 해야됨
                             print("count: \(i)")
                             let companyListModel: CompanyListModel = self.companyListModelDic[i]!
+                            print("recruitPart:\(companyListModel.recruitPart)")
                             self.beaconOccurCompanyListModels.append(companyListModel)
                         }
                         

@@ -23,6 +23,7 @@ class BeaconCompanyTableVC: UIViewController, UITableViewDelegate, UITableViewDa
         self.beaconOccurComapnyListModels = self.appDelegate.beaconOccurCompanyListModels
         self.companyTableView.delegate = self
         self.companyTableView.dataSource = self
+
         
     }
 
@@ -32,7 +33,7 @@ class BeaconCompanyTableVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BeaconEventCell") as! BeaconEventCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyTableCell") as! CompanyTableCell
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
@@ -40,6 +41,7 @@ class BeaconCompanyTableVC: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.logo.loadURLImage(imageUrlStr: self.beaconOccurComapnyListModels[indexPath.row].imageURLStr)
         cell.title.text = self.beaconOccurComapnyListModels[indexPath.row].title
+        
         cell.content.text = self.beaconOccurComapnyListModels[indexPath.row].recruitPart
         
         return cell

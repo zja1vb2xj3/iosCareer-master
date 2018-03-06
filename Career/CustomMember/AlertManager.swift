@@ -15,6 +15,17 @@ class AlertManager {
         alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
     
+//    func setMessageAligment(){
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.alignment = .left
+//    
+//    }
+
+    func addCloseAppActionButton(actionButton: UIAlertAction, closeButton: UIAlertAction){
+        self.alertController.addAction(actionButton)
+        self.alertController.addAction(closeButton)
+    }
+    
     func addActionButton(actionButton: UIAlertAction) {
         let cancelButton = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(actionButton)

@@ -21,6 +21,9 @@ class InfoMainVC: UIViewController {
     
     var vcIndex = 0
     
+    var tabSelectedColor: UIColor! =  UIColor(red: 245/255, green: 192/255, blue: 59/255, alpha: 1)
+    var tabUnSelectedColor: UIColor! = UIColor(red: 53/255, green: 53/255, blue: 53/255, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
@@ -29,9 +32,6 @@ class InfoMainVC: UIViewController {
     
         recruitment_Info_Button.addTarget(self, action: #selector(recruitment_Info_ButtonClick), for: .touchDown)
         company_Info_Button.addTarget(self, action: #selector(company_Info_ButtonClick), for: .touchDown)
-        
-        recruitment_Info_Button.backgroundColor = UIColor.yellow
-        company_Info_Button.backgroundColor = UIColor.black
         
         updateSelfView(buttonindex: 0)
         
@@ -58,15 +58,15 @@ class InfoMainVC: UIViewController {
     
     private func updateSelfView(buttonindex : Int){
         if buttonindex == 0 {
-            recruitment_Info_Button.backgroundColor = UIColor.yellow
-            company_Info_Button.backgroundColor = UIColor.black
+            recruitment_Info_Button.backgroundColor = self.tabSelectedColor
+            company_Info_Button.backgroundColor = self.tabUnSelectedColor
             
             removeChildView(asChildViewController: company_InfoVC)
             add(asChildViewController: recruitment_InfoVC)
         }
         else if buttonindex == 1{
-            recruitment_Info_Button.backgroundColor = UIColor.black
-            company_Info_Button.backgroundColor = UIColor.yellow
+            recruitment_Info_Button.backgroundColor = self.tabUnSelectedColor
+            company_Info_Button.backgroundColor = self.tabSelectedColor
             
             removeChildView(asChildViewController: recruitment_InfoVC)
             add(asChildViewController: company_InfoVC)
@@ -107,7 +107,6 @@ class InfoMainVC: UIViewController {
         }
         else{
             let searchCompanyTableVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchCompanyTableVC") as! SearchCompanyTableVC
-            
             
             self.navigationController?.pushViewController(searchCompanyTableVC, animated: true)
         }

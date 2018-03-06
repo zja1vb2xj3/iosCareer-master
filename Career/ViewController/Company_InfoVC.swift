@@ -63,6 +63,7 @@ class Company_InfoVC: UIViewController, MTMapViewDelegate, MTMapReverseGeoCoderD
         alertManager.createAlert(title: "지도영역클릭", message: "이동 버튼 클릭 시 지도앱으로 이동합니다.")
         
         let actionButton = UIAlertAction(title: "이동", style: .destructive){ (action: UIAlertAction) in
+            //다음 지도앱 작동
             UIApplication.shared.open(URL(string: "daummaps://look?p=\(self.companyDetailModel.location!.latitude),\(self.companyDetailModel.location!.longitude)")!, options: [:], completionHandler: nil)
         }
         

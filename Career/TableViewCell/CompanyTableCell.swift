@@ -1,17 +1,19 @@
 //
-//  TableViewCell.swift
+//  BeaconEventCell.swift
 //  Career
 //
-//  Created by Beaconyx Corp. on 2018. 2. 26..
+//  Created by Beaconyx Corp. on 2018. 2. 19..
 //  Copyright © 2018년 Beaconyx. All rights reserved.
 //
 
 import UIKit
 
-class NoticeCell: UITableViewCell {
-
+class CompanyTableCell: UITableViewCell {
+    @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var logo: URLLoadImageView!
+    @IBOutlet weak var title: UITextView!
     @IBOutlet weak var content: UITextView!
-    @IBOutlet weak var time: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

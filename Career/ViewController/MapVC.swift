@@ -13,12 +13,13 @@ class MapVC: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var pin: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.appDelegate.startScanning()
     
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,6 +35,8 @@ class MapVC: UIViewController {
         let alertManager = AlertManager()
         
         alertManager.createAlert(title: "비콘 반응 발생", message: "이동 버튼을 클릭하시면 상세페이지로 이동합니다.")
+        
+        pin.setImage(UIImage(named: "map_pin_red.png" ), for: UIControlState.normal)
         
         //UIAlertActionStye.destructive 지정 글꼴 색상 변경
         let actionButton = UIAlertAction(title: "이동", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in

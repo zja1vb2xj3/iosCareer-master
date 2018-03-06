@@ -62,5 +62,13 @@ import Foundation
         static let SearchCompanyTableVCKey: Int = 1
     }
     
+    struct AccountTableKey{
+        static let TABLENAME: String = "TB_Account_Ko"
+        static let ACT_USER_ID: String = "ACT_USER_ID"
+        static let ACT_USER_OS: String = "ACT_USER_OS"
+        static let ACT_USER_PHONE_MODEL: String = "ACT_USER_PHONE_MODEL"
+        static let ACT_USER_OS_VERSION: String = "ACT_USER_OS_VERSION"
+    }
+    
     
 }

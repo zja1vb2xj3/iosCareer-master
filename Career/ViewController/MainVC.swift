@@ -12,11 +12,30 @@ class MainVC: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var banner: URLLoadImageView!
-    
+
+    @IBOutlet weak var topButton: UIButton!
+    @IBOutlet weak var bottomButton1: UIButton!
+    @IBOutlet weak var bottomButton2: UIButton!
+    @IBOutlet weak var bottomButton3: UIButton!
+    @IBOutlet weak var bottomButton4: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        topButton.layer.borderWidth = 0.5
+        topButton.layer.borderColor = UIColor.black.cgColor
     
+        bottomButton1.layer.borderWidth = 0.5
+        bottomButton1.layer.borderColor = UIColor.black.cgColor
+        
+        bottomButton2.layer.borderWidth = 0.5
+        bottomButton2.layer.borderColor = UIColor.black.cgColor
+        
+        bottomButton3.layer.borderWidth = 0.5
+        bottomButton3.layer.borderColor = UIColor.black.cgColor
+        
+        bottomButton4.layer.borderWidth = 0.5
+        bottomButton4.layer.borderColor = UIColor.black.cgColor
     }
     
     

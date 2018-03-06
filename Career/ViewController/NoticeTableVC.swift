@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ExpandableHeaderViewDelegate {
+class NoticeTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ExpandableHeaderViewDelegate {
 
     @IBOutlet weak var noticeTableView: UITableView!
     
@@ -21,21 +21,21 @@ class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Ex
         
         let noticeModel: NoticeModel = NoticeModel()
         
-        noticeModel.title = "제목1"
+        noticeModel.title = "공지사항 제목1"
         noticeModel.occurTime = "2018.00.00 00:01"
-        noticeModel.content = "내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1"
+        noticeModel.content = "공지사항 내용1"
         
         let noticeModel2: NoticeModel = NoticeModel()
         
-        noticeModel2.title = "제목2"
+        noticeModel2.title = "공지사항 제목2"
         noticeModel2.occurTime = "2018.00.00 00:02"
-        noticeModel2.content = "내용2"
+        noticeModel2.content = "공지사항 내용2"
         
         let noticeModel3: NoticeModel = NoticeModel()
         
-        noticeModel3.title = "제목1"
-        noticeModel3.occurTime = "2018.00.00 00:01"
-        noticeModel3.content = "내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1"
+        noticeModel3.title = "공지사항 제목3"
+        noticeModel3.occurTime = "2018.00.00 00:03"
+        noticeModel3.content = "공지사항 내용3공지사항 내용3공지사항 내용3공지사항 내용3공지사항 내용3"
  
         self.noticeModels.append(noticeModel)
         self.noticeModels.append(noticeModel2)
@@ -44,7 +44,7 @@ class NoticeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Ex
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeTitleCell")! as! NoticeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeTableCell")! as! NoticeTableCell
         cell.selectionStyle = UITableViewCellSelectionStyle.none
 
         cell.content.text = noticeModels[indexPath.section].content
