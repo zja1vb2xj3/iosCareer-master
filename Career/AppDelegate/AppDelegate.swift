@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import Parse
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -25,6 +26,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var companyListModels = [CompanyListModel]()//리스트 클릭시 모델
     
     var keyChainStr: String!
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        let keyChain = KeychainItemWrapper()
+        self.keyChainStr = keyChain.getBDA()
+        
+        parseInit(launchOptions: launchOptions)
+        
+        beaconInit()
+        
+        FirebaseApp.configure()
+        
+        return true
+    }
+
     
     //로딩때 비콘 컨텐츠를 가져오는 함수
     func getBeaconContentsData(){
@@ -84,20 +101,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             //파스에 접속이 끝나는 루프
             NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.loadSuccessNotification_Key) , object: nil)
         })
-    }
-    
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        let keyChain = KeychainItemWrapper()
-        self.keyChainStr = keyChain.getBDA()
-        
-        parseInit(launchOptions: launchOptions)
-    
-        beaconInit()
-        
-        return true
     }
     
     func beaconInit() {

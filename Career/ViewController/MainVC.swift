@@ -41,13 +41,25 @@ class MainVC: UIViewController {
     
     @IBAction func topButtonClick(_ sender: UIButton) {
         //서버에 오늘날짜 데이터가 없으면 추가
-        print(Date())
-        print(Date.timeIntervalSinceReferenceDate)
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.timeZone = NSTimeZone.local
+//        dateFormatter.dateFormat = "yyyy-MM-dd "
+        
+        let date = NSDate()
+    
+        let formatter = DateFormatter()
+        
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        let dateString = formatter.string(from: date as Date)
+        
+        print(dateString)
     }
     
     func checkTodayRegisterTopButtonClicked(){
         //오늘날짜에 해당 유저 아이디가 없다면 하면 정확할듯.?
-        
         let table = Key.StatisticsTableKey.self
         
         let query =  PFQuery(className: table.TABLENAME)

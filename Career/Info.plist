@@ -31,6 +31,10 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>비콘을 통한 서비스이며, 앱을 사용 중일때만 사용됩니다.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -50,6 +54,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-
 </dict>
 </plist>

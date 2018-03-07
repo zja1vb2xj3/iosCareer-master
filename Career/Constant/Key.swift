@@ -75,6 +75,7 @@ import Foundation
         static let TIME: String = "TIME"
         static let BEACON_ID: String = "BEACON_ID"
         static let CLICK_ENTER: String = "CLICK_ENTER"
+        static let USER_ID: String = "USER_ID"
     }
     
     
