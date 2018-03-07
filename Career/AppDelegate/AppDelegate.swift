@@ -94,6 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.keyChainStr = keyChain.getBDA()
         
         parseInit(launchOptions: launchOptions)
+    
         beaconInit()
         
         return true

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class MainVC: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -38,6 +39,39 @@ class MainVC: UIViewController {
         bottomButton4.layer.borderColor = UIColor.black.cgColor
     }
     
+    @IBAction func topButtonClick(_ sender: UIButton) {
+        //서버에 오늘날짜 데이터가 없으면 추가
+        print(Date())
+        print(Date.timeIntervalSinceReferenceDate)
+    }
+    
+    func checkTodayRegisterTopButtonClicked(){
+        //오늘날짜에 해당 유저 아이디가 없다면 하면 정확할듯.?
+        
+        let table = Key.StatisticsTableKey.self
+        
+        let query =  PFQuery(className: table.TABLENAME)
+        
+        query.findObjectsInBackground(block: {(objects: [PFObject]?, error:Error?) in
+            if error == nil{
+                if objects?.count == 0{//데이터가 없음
+                    let pfObject = PFObject(className: table.TABLENAME)
+                    pfObject[table.CLICK_ENTER] = 1
+//                    pfObject[table.TIME] =
+                }
+                else{//데이터가 있음
+                    
+                }
+            }//end check nil
+            //파스에 접속이 끝나는 루프
+            
+        })
+    }
+    
+    func moveToMapVC(){
+        let mapVC = self.storyboard?.instantiateViewController(withIdentifier: "MapVC") as! MapVC
+        self.navigationController?.pushViewController(mapVC, animated: true)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
        

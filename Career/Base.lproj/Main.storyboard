@@ -59,7 +59,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="비콘 서비스 실행중"/>
                                         <connections>
-                                            <segue destination="dtv-qN-bMp" kind="show" id="lIq-5S-g8Z"/>
+                                            <action selector="topButtonClick:" destination="5jm-on-IL0" eventType="touchDown" id="kQr-iL-AmW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUD-7i-FtM">
@@ -2824,9 +2824,8 @@
         <image name="not_occur_notification_icon.png" width="109" height="101"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BIy-rZ-MFe"/>
-        <segue reference="ejT-34-1Mu"/>
+        <segue reference="fOa-r6-MOS"/>
         <segue reference="WX2-UD-7LU"/>
-        <segue reference="ZaG-D0-xnk"/>
+        <segue reference="lmL-99-TlA"/>
     </inferredMetricsTieBreakers>
 </document>

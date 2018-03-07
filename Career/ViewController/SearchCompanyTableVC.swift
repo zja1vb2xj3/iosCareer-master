@@ -18,86 +18,40 @@ class SearchCompanyTableVC: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var companyTableView: UITableView!
     @IBOutlet weak var searchField: UITextField!
 
-     var companyListModels: [CompanyListModel] = []
+    var companyListModels: [CompanyListModel] = []
     var keyboardHideSign: Bool! = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.companyListModels = self.appDelegate.companyListModels
+        getCompanyListData(participate: "전체")
+        
         self.companyTableView.delegate = self
         self.companyTableView.dataSource = self
         
         self.searchField.delegate = self
     }
-    //지역탭 변경시 서버에 해당 지역으로 검색 CPY_PARTICIPATE
-    @IBAction func changedPlaceSegmented(_ sender: UISegmentedControl) {
-        let segment = sender
-        
-        switch segment.selectedSegmentIndex {
-        case 0://전체
-            print("전체")
-            break
-        case 1://서울
-            print("서울")
-            break
-        case 2://안산
-            print("안산")
-            break
-        case 3://울산
-            print("울산")
-            break
-        case 4://광주
-            print("광주")
-            break
-        case 5://대구
-            print("대구")
-            break
-        case 6://창원
-            print("창원")
-            break
-        default:
-            break
-        }
     
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.searchField.resignFirstResponder()//키보드가 사라지고 나타남
-        
-        let returnStr: String! = self.searchField.text
-        
-        if returnStr != ""{//입력한 데이터가 존재함
-            //검색
-            
-            print("검색시작")
-            searchParseCompanyData(input: returnStr)
-            
-        }
-        else{
-            //입력한 데이터가 존재하지 않는 다이얼로그
-        }
-
-        return true
-    }
-    
-    //마커 반응 되는거 보여줌 반응되면 빨간색으로
-    func searchParseCompanyData(input: String){
+    func getCompanyListData(participate: String) {//탭을 클릭하면 해당 탭이름과 같은 지역의 정보를 가져옴
         let table = Key.CompanyContentsTableKey.self
         
         let query = PFQuery(className: table.TABLENAME)
         query.order(byAscending: table.CPY_IDX)
         
-        query.whereKey(table.CPY_TITLE, equalTo: input)
+        self.companyListModels = []//테이블 모델 초기화
         
-        //데이터가있다면 companyListModels을 비워줌
-        query.findObjectsInBackground(block: {(objects: [PFObject]?, error:Error?) -> Void in
+        if participate != "전체"{//전체가 아니라면 where 조건이 들어감
+            print("전체가 아님")
+            query.whereKey(table.CPY_PARTICIPATE, equalTo: participate)
+        }
+        else{
+            print("전체임")
+        }
+        
+        query.findObjectsInBackground(block: {(objects: [PFObject]?, error:Error?) in
             if error == nil{
                 for object in objects!{
-                    print("검색된 데이터가 있음")
-                    self.companyListModels = []//초기화
-                    
-                     let companyListModel: CompanyListModel! = CompanyListModel()
+                    let companyListModel = CompanyListModel()
                     
                     let idx = object.object(forKey: table.CPY_IDX) as! Int
                     let  boothNumber: String = "0" + String(idx)
@@ -107,26 +61,136 @@ class SearchCompanyTableVC: UIViewController, UITableViewDelegate, UITableViewDa
                     companyListModel.title = object.object(forKey: table.CPY_TITLE) as! String
                     companyListModel.recruitPart = object.object(forKey: table.CPY_RECRUIT_PART) as! String
                     
-                    self.companyListModels.append(companyListModel)
+                    self.companyListModels.append(companyListModel)//searchCompanyTableVC에서 사용
                 }//end for
                 
                 if objects?.count == 0{
-                    //데이터가없음
-                    let alertManager = AlertManager()
-                    alertManager.createAlert(title: "알림", message: "검색된 데이터가 없습니다.")
-                    alertManager.addSuccessButton()
-                    self.present(alertManager.getAlertController(), animated: true, completion: nil)
+                    print("검색된 데이터가 없습니다.")
                 }
             }//end check nil
-
             //파스에 접속이 끝나는 루프
-            self.companyTableView.reloadData()
+             self.companyTableView.reloadData()//테이블 업데이트
         })
     }
     
+    
+    
+    //지역탭 변경시 서버에 해당 지역으로 검색 CPY_PARTICIPATE
+    @IBAction func changedPlaceSegmented(_ sender: UISegmentedControl) {
+        let segment = sender
+        
+        switch segment.selectedSegmentIndex {
+        case 0://전체
+            getCompanyListData(participate: "전체")
+            break
+        case 1://서울
+             getCompanyListData(participate: "서울")
+            break
+        case 2://안산
+             getCompanyListData(participate: "안산")
+            break
+        case 3://울산
+             getCompanyListData(participate: "울산")
+            break
+        case 4://광주
+             getCompanyListData(participate: "광주")
+            break
+        case 5://대구
+             getCompanyListData(participate: "대구")
+            break
+        case 6://창원
+             getCompanyListData(participate: "창원")
+            break
+        default:
+            break
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.searchField.resignFirstResponder()//키보드가 사라지고 나타남
+        
+        let returnStr: String! = self.searchField.text
+        
+        if returnStr != ""{//입력한 데이터가 존재함
+            //검색
+            print("returnStrCount",returnStr.count)
+            
+            //검색된 글자 개수 2개이상
+            if returnStr.count >= 2{
+                searchParseCompanyData(input: returnStr)
+            }
+            else{
+                let alert = AlertManager()
+                
+                alert.createAlert(title: "알림", message: "두 글자 이상 입력해 주세요.")
+                alert.addSuccessButton()
+                self.present(alert.getAlertController(), animated: true, completion: nil)
+            }
+        
+        }
+        else{
+            let alert = AlertManager()
+            
+            alert.createAlert(title: "알림", message: "입력한 데이터가 없습니다.")
+            alert.addSuccessButton()
+            self.present(alert.getAlertController(), animated: true, completion: nil)
+        }
 
+        return true
+    }
+
+    func searchParseCompanyData(input: String){//검색 함수
+        let table = Key.CompanyContentsTableKey.self
+        
+        let query = PFQuery(className: table.TABLENAME)
+        query.order(byAscending: table.CPY_IDX)
+        
+        let currentSegmentTitle = placeSegmented.titleForSegment(at: placeSegmented.selectedSegmentIndex)
+        
+        if currentSegmentTitle != "전체"{//전체가 아닐때만 where조건 들어감
+            print("전체가 아님")
+            query.whereKey(table.CPY_PARTICIPATE, equalTo: currentSegmentTitle as Any)//현재 지역명과 같은
+        }
     
+        query.whereKey(table.CPY_TITLE, contains: input)//입력한 데이터를 포함한 거는 모두 검색 (전체, 전체가 아닐때 모두 사용)
+        
+        self.companyListModels = []//초기화
+        
+        //동일한 참여지역명의 데이터를 우선 뽑아내고 그다음 contain 으로 입력한 두글자 이상의 데이터를 포함하고 있는 데이터를 찾음
+        query.findObjectsInBackground(block: {(objects: [PFObject]?, error:Error?) -> Void in
+                        if error == nil{
+                            for object in objects!{
+                                
+                                print("검색된 데이터가 있음")
+            
+                                let companyListModel: CompanyListModel! = CompanyListModel()
+
+                                let idx = object.object(forKey: table.CPY_IDX) as! Int
+                                let  boothNumber: String = "0" + String(idx)
+
+                                companyListModel.boothNumber = boothNumber
+                                companyListModel.imageURLStr = object.object(forKey: table.CPY_LOGO) as! String
+                                companyListModel.title = object.object(forKey: table.CPY_TITLE) as! String
+                                companyListModel.recruitPart = object.object(forKey: table.CPY_RECRUIT_PART) as! String
+
+                                self.companyListModels.append(companyListModel)
+                            }//end for
+            
+                            if objects?.count == 0{
+                                //데이터가없음
+                                let alertManager = AlertManager()
+                                alertManager.createAlert(title: "알림", message: "검색된 데이터가 없습니다.")
+                                alertManager.addSuccessButton()
+                                self.present(alertManager.getAlertController(), animated: true, completion: nil)
+                            }
+                        }//end check nil
+            //            //파스에 접속이 끝나는 루프
+                        self.companyTableView.reloadData()
+                    })
     
+    }
+    
+
     
     @IBAction func searchFieldTouchDown(_ sender: UITextField) {
         self.searchField.resignFirstResponder()//키보드가 사라지고 나타남

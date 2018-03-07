@@ -70,5 +70,12 @@ import Foundation
         static let ACT_USER_OS_VERSION: String = "ACT_USER_OS_VERSION"
     }
     
+    struct StatisticsTableKey {
+        static let TABLENAME: String = "TB_Statistics"
+        static let TIME: String = "TIME"
+        static let BEACON_ID: String = "BEACON_ID"
+        static let CLICK_ENTER: String = "CLICK_ENTER"
+    }
+    
     
 }

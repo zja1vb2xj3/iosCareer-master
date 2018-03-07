@@ -20,8 +20,6 @@ class LoadVC: UIViewController {
         initNavigationItem()
         
         checkRegisterUser()
-    
-    
     }
 
     func loadParseData(){
@@ -92,7 +90,6 @@ class LoadVC: UIViewController {
     @objc func moveToMainVC() {
         let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
         self.navigationController?.pushViewController(mainVC, animated: true)
-        
     }
     
     func initNavigationItem(){
