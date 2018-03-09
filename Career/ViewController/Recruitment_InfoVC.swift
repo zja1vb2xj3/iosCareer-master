@@ -74,15 +74,13 @@ class Recruitment_InfoVC: UIViewController {
             print("")
         }
     }
+    
     //폰모델
     //2g, 3g, 3gs, 4, 4s = 3.5 인치 320x480
     //5, 5s 5c, se = 4인치 320x568
     //6, 6s, 7, 8 = 4.7인치 375x667
     //6+, 6s+, 7+, 8+ = 5.5인치 414x736
     //X = 5.8인치 375x812
-    
-
-    
     override func viewDidAppear(_ animated: Bool) {
 
     }

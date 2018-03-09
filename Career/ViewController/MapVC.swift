@@ -17,9 +17,16 @@ class MapVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.appDelegate.startScanning()
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.appDelegate.currentVCName = Key.BeaconOccurVCName.MapVC
+        self.appDelegate.startScanning()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.appDelegate.stopScanning()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,9 +34,9 @@ class MapVC: UIViewController {
     }
     
     @objc func beaconOccur(){
-        
         showAlert()
     }
+
     
     func showAlert() {
         let alertManager = AlertManager()

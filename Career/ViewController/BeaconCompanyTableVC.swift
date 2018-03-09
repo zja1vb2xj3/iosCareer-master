@@ -40,7 +40,15 @@ class BeaconCompanyTableVC: UIViewController, UITableViewDelegate, UITableViewDa
         cell.number.text = self.beaconOccurComapnyListModels[indexPath.row].boothNumber
         
         cell.logo.loadURLImage(imageUrlStr: self.beaconOccurComapnyListModels[indexPath.row].imageURLStr)
-        cell.title.text = self.beaconOccurComapnyListModels[indexPath.row].title
+        
+        let title = self.beaconOccurComapnyListModels[indexPath.row].title
+        
+        cell.title.text = title
+        
+        //아이폰 인치별 width에 따라 title 텍스트 조절해야함
+        if title!.count > 14 {
+            cell.title.font = cell.title.font?.withSize(10)
+        }
         
         cell.content.text = self.beaconOccurComapnyListModels[indexPath.row].recruitPart
         

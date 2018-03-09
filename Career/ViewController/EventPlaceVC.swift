@@ -18,7 +18,7 @@ class EventPlaceVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.mapImageView.image = UIImage(named: "fmap1.PNG")
+        self.mapImageView.image = UIImage(named: "fmap1.png")
         self.dayLabel.text = "4월 2일(월)"
         self.placeLabel.text = "서울 코엑스 C1~3홀"
     }
@@ -28,32 +28,32 @@ class EventPlaceVC: UIViewController {
         switch segment.selectedSegmentIndex {
         case 0://서울
             //각 mapImageView image, dayLabel, placeLabel text 변경
-            self.mapImageView.image = UIImage(named: "fmap1.PNG")
+            self.mapImageView.image = UIImage(named: "fmap1.png")
             self.dayLabel.text = "4월 2일(월)"
             self.placeLabel.text = "서울 코엑스 C1~3홀"
             break
         case 1://안산
-            self.mapImageView.image = UIImage(named: "fmap1.PNG")
+            self.mapImageView.image = UIImage(named: "fmap1.png")
             self.dayLabel.text = "4월 12일(목)"
             self.placeLabel.text = "상록수 체육관"
             break
         case 2://울산
-            self.mapImageView.image = UIImage(named: "fmap2.PNG")
+            self.mapImageView.image = UIImage(named: "fmap2.png")
             self.dayLabel.text = "4월 27일(금)"
             self.placeLabel.text = "울산 울산대학교 체육관"
             break
         case 3://광주
-            self.mapImageView.image = UIImage(named: "fmap1.PNG")
+            self.mapImageView.image = UIImage(named: "fmap1.png")
             self.dayLabel.text = "5월 3일(목)"
             self.placeLabel.text = "김대중컨벤션센터"
             break
         case 4://대구
-            self.mapImageView.image = UIImage(named: "fmap1.PNG")
+            self.mapImageView.image = UIImage(named: "fmap1.png")
             self.dayLabel.text = "5월 15일(화)"
             self.placeLabel.text = "엑스코"
             break
         case 5://창원
-            self.mapImageView.image = UIImage(named: "fmap1.PNG")
+            self.mapImageView.image = UIImage(named: "fmap1.png")
             self.dayLabel.text = "5월 24일(목)"
             self.placeLabel.text = "컨벤션센터"
             break

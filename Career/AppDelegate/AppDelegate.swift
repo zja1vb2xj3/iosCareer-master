@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Parse
 import Firebase
+import AudioToolbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -55,13 +56,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 for object in objects!{
                     let beaconModel = BeaconModel()
                     
-                    beaconModel.range = object.object(forKey: table.BCS_BOOTH_RANGE) as! String
-                    beaconModel.id = object.object(forKey: table.BCS_BEACON_ID) as! String
-                    beaconModel.major = object.object(forKey: table.BCS_BEACON_MAJOR) as! String
-                    beaconModel.minor = object.object(forKey: table.BCS_BEACON_MINOR) as! String
-                    beaconModel.rssiCorrection = object.object(forKey: table.BCS_RSSI_COMPLEMENT) as! Int
+                    let boothRange = object.object(forKey: table.BCS_BOOTH_RANGE) as! String
                     
-                    self.beaconModelDic[beaconModel.id] = beaconModel
+                    if boothRange != Key.undefined{
+                        beaconModel.range = object.object(forKey: table.BCS_BOOTH_RANGE) as! String
+                        beaconModel.id = object.object(forKey: table.BCS_BEACON_ID) as! String
+                        beaconModel.major = object.object(forKey: table.BCS_BEACON_MAJOR) as! String
+                        beaconModel.minor = object.object(forKey: table.BCS_BEACON_MINOR) as! String
+                        beaconModel.rssiCorrection = object.object(forKey: table.BCS_RSSI_COMPLEMENT) as! Int
+                        
+                        self.beaconModelDic[beaconModel.id] = beaconModel
+                        print("beaconId",beaconModel.id)
+                    }
                 }//end for
             }//end check nil
             self.getCompanyListData()
@@ -110,13 +116,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     //companyListDic의 결과 companyModel들을 담을 array생성
+    
+    //
     var beaconOccurCompanyListModels: [CompanyListModel] = []
+    var currentVCName: String!
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-    
+        
         let filteredBeacons = beacons.filter{ $0.proximity != CLProximity.unknown && $0.rssi <= -25 }
         
         if filteredBeacons.count > 0{
+            print("비콘반응 VC:", self.currentVCName)
+            
             for i: Int in 0 ..< filteredBeacons.count{
                 if filteredBeacons[i].major == 1804{
                     
@@ -125,44 +136,102 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     
                     let beaconId : String! = "m" + major + "_" + minor//비콘아이디생성
                     
-                    //비콘 중복제거
-                    let sign = deduplicationValue(beaconId: beaconId)
+                    let sign = deduplicationValue(beaconId: beaconId)//중복제거 신호
                     
                     if sign == false{
-                        //비콘반응 발생 noti
-                        print("beaconId: \(beaconId)")
-                        let beaconModel: BeaconModel = self.beaconModelDic[beaconId]!
+                        print("중복이 아님")
                         
-                        let rangeArr: [String] = self.separationStr(value: beaconModel.range, separatedBy: "~")
-                        
-                        //비콘 반응시 rangeArr[0] ~ rangeArr[1] 반복문
-                        
-                        let startValue : Int = Int(rangeArr[0])!
-                        let endValue : Int = Int(rangeArr[1])!
-                        print(startValue)
-                        print(endValue)
-                        self.beaconOccurCompanyListModels = []//초기화
-                        
-                        for  i in startValue ... 5 {//실제론 end로 해야됨
-                            print("count: \(i)")
-                            let companyListModel: CompanyListModel = self.companyListModelDic[i]!
-                            print("recruitPart:\(companyListModel.recruitPart)")
-                            self.beaconOccurCompanyListModels.append(companyListModel)
+                        switch(self.currentVCName){
+                        case Key.BeaconOccurVCName.MainVC:
+                            if beaconId == Key.SpacialBeaconId.SPECIAL_LECTURE_BEACONID{
+                                checkTodayRegisterEnterBeacon(beaconId: beaconId)
+                            }
+                            break
+                        case Key.BeaconOccurVCName.MapVC:
+                            if beaconId == Key.SpacialBeaconId.SPECIAL_LECTURE_BEACONID{
+                                checkTodayRegisterEnterBeacon(beaconId: beaconId)
+                            }
+                            //취업특별관 비콘 아이디가 아닐경우 조건을 걸어야할지
+                            createBeaconOccurCompanyListModels(beaconId: beaconId)
+                            break
+                        default:
+                            break
                         }
-                        
-                        NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.beaconOccurNotification_Key) , object: nil)
-                    }
+                    }//end sign false
                     else{
-                        continue
+                        print("중복임")
                     }
+                    
                     print(beaconId!)
-                    print(sign)
                 }
             }
         }
         else{
             print("beacon not find")
         }
+    }
+    
+    
+    func checkTodayRegisterEnterBeacon(beaconId: String){//입장 비콘 체크
+        let table = Key.StatisticsTableKey.self
+        
+        let query =  PFQuery(className: table.TABLENAME)
+        
+        query.whereKey(table.USER_ID, equalTo: self.keyChainStr)
+        query.whereKey(table.TIME, contains: TimeManager().getMonthOfDay())
+        query.whereKey(table.BEACON_ID, equalTo: beaconId)
+        
+        query.findObjectsInBackground(block: {(objects: [PFObject]?, error:Error?) in
+            if error == nil{
+                if objects?.count == 0{//데이터가 없음
+                    print("등록된 enter 비콘이 없음")
+                    let pfObject = PFObject(className: table.TABLENAME)
+                    pfObject[table.BEACON_ID] = "m1804_1000"
+                    pfObject[table.TIME] = TimeManager().getCurrentTime()
+                    pfObject[table.USER_ID] = self.keyChainStr
+                    
+                    pfObject.saveInBackground { (success:Bool, error:Error?) -> Void in
+                        if (success) {//등록 성공
+                            
+                        }
+                        else{
+                            //실패
+                        }
+                    }
+                    //데이터가 없다면 서버에 등록 후 main과
+                }//end 데이터가 없음
+                else{//데이터가 있음
+                    print("등록된 enter 비콘이 있음")
+                }
+            }//end check nil
+            //파스에 접속이 끝나는 루프
+           
+        })
+    }
+    
+    
+    func createBeaconOccurCompanyListModels(beaconId: String){
+        print("beaconId: \(beaconId)")
+        let beaconModel: BeaconModel = self.beaconModelDic[beaconId]!
+        
+        let rangeArr: [String] = self.separationStr(value: beaconModel.range, separatedBy: "~")
+        
+        //비콘 반응시 rangeArr[0] ~ rangeArr[1] int로 변환하여 반복문 사용
+        
+        let startValue : Int = Int(rangeArr[0])!
+        let endValue : Int = Int(rangeArr[1])!
+        print(startValue)
+        print(endValue)
+        self.beaconOccurCompanyListModels = []//초기화
+        
+        for  i in startValue ... 5 {//실제론 end로 해야됨
+            print("count: \(i)")
+            let companyListModel: CompanyListModel = self.companyListModelDic[i]!
+            print("recruitPart:\(companyListModel.recruitPart)")
+            self.beaconOccurCompanyListModels.append(companyListModel)
+        }
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Key.NotificationNameKey.beaconOccurNotification_Key) , object: nil)
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
     //문자열 separatedBy 기준 분할
@@ -193,7 +262,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         self.locationManager?.requestWhenInUseAuthorization()
         self.locationManager!.startRangingBeacons(in: beaconRegion)
+    }
+    
+    func stopScanning(){
+        let uuid = UUID(uuidString: "a0fabefc-b1f5-4836-8328-7c5412fff9c4")
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid!, identifier: "")
         
+        self.locationManager?.requestWhenInUseAuthorization()
+        self.locationManager?.stopRangingBeacons(in: beaconRegion)
     }
     
     func parseInit(launchOptions : [UIApplicationLaunchOptionsKey : Any]?) {

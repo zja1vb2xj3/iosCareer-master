@@ -8,6 +8,8 @@
 
 import Foundation
  class Key{
+    static let undefined: String! = "undefined"
+    
     struct  NotificationNameKey{
         static let loadSuccessNotification_Key: String = "Load"
         static let beaconOccurNotification_Key: String = "Beacon"
@@ -27,6 +29,15 @@ import Foundation
     //비콘이 반응됫을때 비콘 아이디로 부스범위를 찾는다
     //찾아진 부스 범위로 회사 데이터에 동일한 부스 범위를 검색해서 컨텐츠를 받아옴
     
+    struct BeaconOccurVCName {
+        static let MainVC: String = "MainVC"
+        static let MapVC: String = "MapVC"
+    }
+    
+    struct SpacialBeaconId {
+        static let ENTER_BEACONID = "m1804_1000"
+        static let SPECIAL_LECTURE_BEACONID = "m1804_2000"
+    }
     
     struct CompanyContentsTableKey {
         static let TABLENAME: String = "TB_Company_Ko"

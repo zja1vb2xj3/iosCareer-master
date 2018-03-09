@@ -22,7 +22,7 @@ class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         topButton.layer.borderWidth = 0.5
         topButton.layer.borderColor = UIColor.black.cgColor
     
@@ -39,44 +39,57 @@ class MainVC: UIViewController {
         bottomButton4.layer.borderColor = UIColor.black.cgColor
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.appDelegate.currentVCName = Key.BeaconOccurVCName.MainVC
+//        self.appDelegate.startScanning()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+//        self.appDelegate.stopScanning()
+    }
+    
     @IBAction func topButtonClick(_ sender: UIButton) {
         //서버에 오늘날짜 데이터가 없으면 추가
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.timeZone = NSTimeZone.local
-//        dateFormatter.dateFormat = "yyyy-MM-dd "
-        
-        let date = NSDate()
-    
-        let formatter = DateFormatter()
-        
-        formatter.timeZone = TimeZone.current
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        
-        let dateString = formatter.string(from: date as Date)
-        
-        print(dateString)
+
+        checkTodayRegisterTopButtonClicked()
+        //행사일 월일에 유저 아이디가 존재한다면 추가를 안함
     }
     
     func checkTodayRegisterTopButtonClicked(){
-        //오늘날짜에 해당 유저 아이디가 없다면 하면 정확할듯.?
+        print("checkTodayRegisterTopButtonClicked")
         let table = Key.StatisticsTableKey.self
         
         let query =  PFQuery(className: table.TABLENAME)
         
+        //현재 월일에 해당 유저가 등록된 데이터가 있다면
+        query.whereKey(table.USER_ID, equalTo: self.appDelegate.keyChainStr)
+        query.whereKey(table.TIME, contains: TimeManager().getMonthOfDay())
+        query.whereKey(table.CLICK_ENTER, equalTo: 1)
+        
         query.findObjectsInBackground(block: {(objects: [PFObject]?, error:Error?) in
             if error == nil{
                 if objects?.count == 0{//데이터가 없음
+                    print("데이터가 존재하지 않습니다")
                     let pfObject = PFObject(className: table.TABLENAME)
                     pfObject[table.CLICK_ENTER] = 1
-//                    pfObject[table.TIME] =
+                    pfObject[table.TIME] = TimeManager().getCurrentTime()
+                    pfObject[table.USER_ID] = self.appDelegate.keyChainStr
+                    
+                    pfObject.saveInBackground { (success:Bool, error:Error?) -> Void in
+                        if (success) {//등록 성공
+                            
+                        }
+                        else{
+                            //실패
+                        }
+                    }
                 }
                 else{//데이터가 있음
-                    
+                
                 }
             }//end check nil
             //파스에 접속이 끝나는 루프
-            
+            self.moveToMapVC()
         })
     }
     

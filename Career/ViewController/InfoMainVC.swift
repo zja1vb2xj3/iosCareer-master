@@ -6,6 +6,14 @@
 //  Copyright © 2018년 Beaconyx. All rights reserved.
 //
 
+
+//폰모델
+//2g, 3g, 3gs, 4, 4s = 3.5 인치 320x480
+//5, 5s 5c, se = 4인치 320x568
+//6, 6s, 7, 8 = 4.7인치 375x667
+//6+, 6s+, 7+, 8+ = 5.5인치 414x736
+//X = 5.8인치 375x812
+
 import UIKit
 
 class InfoMainVC: UIViewController {
@@ -21,8 +29,11 @@ class InfoMainVC: UIViewController {
     
     var vcIndex = 0
     
-    var tabSelectedColor: UIColor! =  UIColor(red: 245/255, green: 192/255, blue: 59/255, alpha: 1)
-    var tabUnSelectedColor: UIColor! = UIColor(red: 53/255, green: 53/255, blue: 53/255, alpha: 1)
+    let tabSelectedBGColor: UIColor! =  UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+    let tabUnSelectedBGColor: UIColor! = UIColor(red: 9/255, green: 88/255, blue: 173/255, alpha: 1)
+    
+    let tabSelectedTextColor: UIColor! = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+    let tabUnSelectedTextColor: UIColor! = UIColor(red: 74/255, green: 128/255, blue: 181/255, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,24 +68,33 @@ class InfoMainVC: UIViewController {
     }
     
     private func updateSelfView(buttonindex : Int){
+        print(buttonindex)
+        
         if buttonindex == 0 {
-            recruitment_Info_Button.backgroundColor = self.tabSelectedColor
-            company_Info_Button.backgroundColor = self.tabUnSelectedColor
+            self.recruitment_Info_Button.backgroundColor = self.tabSelectedBGColor
+            self.recruitment_Info_Button.titleLabel?.textColor = self.tabSelectedTextColor
+            self.recruitment_Info_Button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+            
+            self.company_Info_Button.backgroundColor = self.tabUnSelectedBGColor
+            self.company_Info_Button.titleLabel?.textColor = self.tabUnSelectedTextColor
+            self.company_Info_Button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
             
             removeChildView(asChildViewController: company_InfoVC)
             add(asChildViewController: recruitment_InfoVC)
         }
         else if buttonindex == 1{
-            recruitment_Info_Button.backgroundColor = self.tabUnSelectedColor
-            company_Info_Button.backgroundColor = self.tabSelectedColor
+            self.recruitment_Info_Button.backgroundColor = self.tabUnSelectedBGColor
+            self.recruitment_Info_Button.titleLabel?.textColor = self.tabUnSelectedTextColor
+            self.recruitment_Info_Button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+            
+            self.company_Info_Button.backgroundColor = self.tabSelectedBGColor
+            self.company_Info_Button.titleLabel?.textColor = self.tabSelectedTextColor
+            self.company_Info_Button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
             
             removeChildView(asChildViewController: recruitment_InfoVC)
             add(asChildViewController: company_InfoVC)
         }
-        else{
-            removeChildView(asChildViewController: company_InfoVC)
-            removeChildView(asChildViewController: recruitment_InfoVC)
-        }
+    
     }
     
     private func removeChildView(asChildViewController viewController : UIViewController){
@@ -128,7 +148,7 @@ class InfoMainVC: UIViewController {
         var viewController = storyboard.instantiateViewController(withIdentifier: "Company_InfoVC") as! Company_InfoVC
         
         viewController.companyDetailModel = self.companyDetailModel
-        
+    
         self.add(asChildViewController: viewController)
         
         return viewController
